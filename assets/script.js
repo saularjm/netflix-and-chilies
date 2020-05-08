@@ -12,10 +12,16 @@
             }
         }
 
-        // Perform AJAX call:
+        // OMDb query url
+        var queryURL = "https://www.omdbapi.com/?t=" + title + "&apikey=724592e7";
+
+        // Perform AJAX call for utelly:
         $.ajax(settings).then(function (response) {
             //console.log(response);
-            
+            if (response.results.length === 0) {
+                console.log("No movie for you!");
+            }
+            else {
             // Var for array of available locations to stream:
             var locations = response.results[0].locations;
 
@@ -23,7 +29,18 @@
             for (var i=0;i<=locations.length-1;i++) {
                 console.log("Available on: " + locations[i].display_name);
             }
+        }
         });
+
+        // AJAX call for OMDb
+        $.ajax({
+            url: queryURL,
+            method: "GET"
+          }).then(function(response) {
+              console.log(response.Plot);
+              console.log(response.Poster);
+              console.log(response.Runtime);
+          })
 
         // Zomato API
         // Sacramento entity_id = 499
