@@ -1,0 +1,40 @@
+Netflix and Chillies: a movie and dinner pairing 
+
+PROJECT DESCRIPTION: For socially distant date nights select dinner and movie delivered straight to you. 
+**Hope to add a functino where we can share movie& food selectino on social media
+
+GROUP MEMBERS: Haley Alton, Salar Moaddeli, Sandra Arredondo, Vanessa Bautista
+
+USER STORY: 
+As a socially-distancing American I am bored and hungry and I want to eat and watch a movie at home so that I don't have to leave my house.
+
+WIREFRAME: header, 2 colums, footer, each column has space for return of data, one column is for movie info and one is for food info. Digital sketch:
+ _____________________________________
+|_____________________________________|
+|                  |                  |
+|                  |                  |
+|                  |                  |
+|                  |                  |
+|                  |                  |
+|                  |                  |
+|                  |                  |
+ _____________________________________
+|_____________________________________| 
+
+API'S: https://developers.zomato.com/api 
+https://rapidapi.com/utelly/api/utelly
+https://rapidapi.com/hmerritt/api/imdb-internet-movie-database-unofficial
+https://rapidapi.com/rapidapi/api/movie-database-imdb-alternative/endpoints
+https://rapidapi.com/hmerritt/api/imdb-internet-movie-database-unofficial
+
+ZOMATO API KEY: 8aeaa8b6fb7879eccc32af42e280f916  
+"x-rapidapi-key": "d30cc4b8b9msh215308fd232e003p1db4bcjsn6b60f025c407"
+
+
+BREAKDOWN OF TASKS:
+Front End Team: Vanessa & Haley
+Back End: Saular & Sandra 
+
+- Front end lookign up css frameworks, starting on css 
+- Back end set up github and finding API keys
+
