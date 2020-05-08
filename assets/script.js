@@ -18,14 +18,19 @@
         // Perform AJAX call for utelly:
         $.ajax(settings).then(function (response) {
             //console.log(response);
-            
+            if (response.results.length === 0) {
+                console.log("No movie for you!");
+            }
+            else {
             // Var for array of available locations to stream:
             var locations = response.results[0].locations;
 
             // Loop through different streaming services available and print:
             for (var i=0;i<=locations.length-1;i++) {
                 console.log("Available on: " + locations[i].display_name);
+                console.log("Link: " + locations[i].url);
             }
+        }
         });
 
         // AJAX call for OMDb
@@ -33,7 +38,12 @@
             url: queryURL,
             method: "GET"
           }).then(function(response) {
+              console.log(response.Title);
               console.log(response.Plot);
+
+              var poster = $("<img>");
+              poster.attr("src", response.Poster);
+
               console.log(response.Poster);
               console.log(response.Runtime);
           })
