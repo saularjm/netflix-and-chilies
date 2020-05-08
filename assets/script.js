@@ -69,3 +69,5 @@
                 console.log("Restaurant phone number: " + restaurant[i].restaurant.phone_numbers);
             }
         })
+
+        //do a drop down menu of the food
