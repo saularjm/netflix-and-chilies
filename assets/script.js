@@ -38,18 +38,60 @@
               console.log(response.Runtime);
           })
 
+
+
+
+        
+        //////////////////////////////////////////////////////
+
+
         // Zomato API
         // Sacramento entity_id = 499
         // entity_type = city
         // Category code for delivery = 1
 
-        // Cuisine codes: American = 1, Asian = 3, BBQ = 193, Breakfast = 182, Burger = 168, Chinese = 25, Desserts = 100, Fast Food = 40, Healthy Food = 143, Indian = 148, Italian = 55, Mexican = 73, Pizza = 82, Seafood = 83, Sushi = 177, Vegetarian = 308
+        /* Cuisine codes: 
+        American = 1, 
+        Asian = 3, 
+        BBQ = 193, 
+        Breakfast = 182, 
+        Burger = 168, 
+        Chinese = 25, 
+        Desserts = 100, 
+        Fast Food = 40, 
+        Healthy Food = 143, 
+        Indian = 148, 
+        Italian = 55, 
+        Mexican = 73, 
+        Pizza = 82, 
+        Seafood = 83, 
+        Sushi = 177, 
+        Vegetarian = 308
+
+        */
+
+        // var selectedFood = {
+        //     American: 1,
+        //     Asian: 3,
+        //     BBQ: 193,
+
+        // };
+
+        /*
+        1. click event for dropdown menu so it toggles the options
+        2. click event for selection, (and preventdefault) that grabs the id (that has the corresponding zomato food code)
+        and then does an ajax call with the id (that has to be turned into an integer first)
+        3. for every selection an ajax call populates the container div with 10 results
+            a. each result gets a set of three (for now) divs + append to element*/
+
 
         // var for type of food, have to search by zomato code
-        var cuisineCode = 25;
+        //var cuisineCode = 25;
 
         // API call URL built with given cuisine code
-        var queryURL = "https://developers.zomato.com/api/v2.1/search?entity_id=499&entity_type=city&category=1&sort=rating&cuisines=" + cuisineCode;
+        /*URL includes city id for Sacramento, entity type narrows down what type of location we're looking for restaurants in, category specifies what kind of service
+        we're looking for - category 1 refers to delivery. Count specifies how many results to show on webpage. Cuisines is refrenced by a zomato specific food code*/
+        var queryURL = "https://developers.zomato.com/api/v2.1/search?entity_id=499&entity_type=city&category=1&sort=rating&count=10&cuisines=" + 25;
 
         // AJAX call
         $.ajax({
@@ -63,11 +105,21 @@
             var restaurant = response.restaurants;
 
             // Loop through and print restaurant info
-            for (var i=0;i<=5;i++) {
+            for (var i = 0; i < 10; i++) {
+                //jquery .text or .html these results on webpage
                 console.log("Restaurant name: " + restaurant[i].restaurant.name);
                 console.log("Restaurant menu: " + restaurant[i].restaurant.menu_url);
                 console.log("Restaurant phone number: " + restaurant[i].restaurant.phone_numbers);
             }
+
         })
 
         //do a drop down menu of the food
+        //get all cuisine codes and put in drop down menu - only show the names (grab the names)
+        //click event for drop down menu
+            //clicking on initial drop down
+            //clicking on a selection
+        //clicking on menu opens up a modal
+
+
+        ///as it cycles through response, it creates three new divs for every item and appends it behind the previous result
