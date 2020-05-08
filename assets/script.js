@@ -36,7 +36,7 @@
         var cuisineCode = 25;
 
         // API call URL built with given cuisine code
-        var queryURL = "https://developers.zomato.com/api/v2.1/search?entity_id=499&entity_type=city&category=1&cuisines=" + cuisineCode;
+        var queryURL = "https://developers.zomato.com/api/v2.1/search?entity_id=499&entity_type=city&category=1&sort=rating&cuisines=" + cuisineCode;
 
         // AJAX call
         $.ajax({
