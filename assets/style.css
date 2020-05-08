@@ -11,14 +11,10 @@ body {
 
 
 }
-.row {
-    content: "";
-    display: table;
-    clear: both;
-  }
 
 
   .column {
+    margin:20px;
     width: 50%;
     padding: 10px;
     height: 300px; 
