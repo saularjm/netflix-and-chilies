@@ -28,6 +28,7 @@
             // Loop through different streaming services available and print:
             for (var i=0;i<=locations.length-1;i++) {
                 console.log("Available on: " + locations[i].display_name);
+                console.log("Link: " + locations[i].url);
             }
         }
         });
@@ -37,7 +38,12 @@
             url: queryURL,
             method: "GET"
           }).then(function(response) {
+              console.log(response.Title);
               console.log(response.Plot);
+
+              var poster = $("<img>");
+              poster.attr("src", response.Poster);
+
               console.log(response.Poster);
               console.log(response.Runtime);
           })
