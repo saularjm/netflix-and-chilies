@@ -2,47 +2,23 @@
 <html lang="en">
 
 <head>
-  <<<<<<< HEAD food-script <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    =======
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    >>>>>>> 63b154b7c8a9d287ea081100fe8fcfa42a802d81
+  <!--Bootstrap Link-->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <!--CSS Link-->
+  <link rel="stylesheet" href="assets/style.css">
 
-    <<<<<<< HEAD <title>Document</title>
-      <meta charset="UTF-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-      <title>Document</title>
-      master
-      =======
-      <title>Document</title>
-
-      >>>>>>> 63b154b7c8a9d287ea081100fe8fcfa42a802d81
+  <title>Netflix and Chillies</title>
 </head>
 
-
 <body>
-  food-script
-  <h1>Hello</h1>
-
-
-
-
-
-
-
-
-  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-  <script src="/assets/script.js"></script>
 
   <header>
-    <div class="jumbotron jumbotron-fluid" style="background-color: aquamarine;">
+    <div class="jumbotron jumbotron-fluid" id="jumbo">
       <div class="container">
         <h1 class="display-4">NETFLIX AND CHILLIES</h1>
         <p class="lead">Find your food and movies here!</p>
@@ -50,33 +26,90 @@
     </div>
   </header>
 
-  <div class="row" style="margin:20px;">
-    <div class="column" style="position:left; background-color:rgb(56, 142, 163);">
-      <h2>MOVIES</h2>
-      <div class="search-box">
-        <input type="text" name="name" class="search-txt" placeholder="Type to search" />
-        <a class="search-btn" href="#">
-          <i class="fa fa-search" aria-hidden="true"></i>
-        </a>
+  <div class="container" id="main-content">
+    <div class="row">
+
+      <!--DIV column 1 MOVIES-->
+      <div class="col">
+        <div class="card" style="width: 100%">
+          <div class="card-header">
+            <h2>Movies</h2>
+          </div>
+          <nav class="navbar navbar-light bg-light">
+            <form class="form-inine">
+              <input class="form-control" type="search" id="movie-search" placeholder="Enter movie title here">
+              <button type="button" class="btn btn-light" id="searchButton">Search</button>
+            </form>
+          </nav>
+          <hr>
+          <div class="card-body" id="movie-section">
+          </div>
+        </div>
       </div>
-    </div>
-    <div class="column" style="position:right; background-color:rgb(158, 100, 155);">
-      <h2>FOOD</h2>
-      <div class="btn-group">
-        <button class="btn btn-secondary btn-lg dropdown-toggle" type="button" data-toggle="dropdown"
-          aria-haspopup="true" aria-expanded="false">
-          Food Options
-        </button>
-        <div class="dropdown-menu">
+
+      <!--DIV column 2 FOOD-->
+      <div class="col" id="food-section">
+        <div class="card" style="width: 100%">
+          <div class="card-header">
+            <h2>Food</h2>
+          </div>
+          <nav class="navbar navbar-light bg-light">
+            <div class="dropdown" style="height:76px;">
+              <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
+                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Dropdown button
+              </button>
+              <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <a class="dropdown-item" href="1">American</a>
+                <a class="dropdown-item" href="3">Asian</a>
+                <a class="dropdown-item" href="193">BBQ</a>
+                <a class="dropdown-item" href="182">Breakfast</a>
+                <a class="dropdown-item" href="168">Burger</a>
+                <a class="dropdown-item" href="25">Chinese</a>
+                <a class="dropdown-item" href="100">Desserts</a>
+                <a class="dropdown-item" href="40">Fast Food</a>
+                <a class="dropdown-item" href="143">Healthy Food</a>
+                <a class="dropdown-item" href="148">Indian</a>
+                <a class="dropdown-item" href="55">Italian</a>
+                <a class="dropdown-item" href="73">Mexican</a>
+                <a class="dropdown-item" href="82">Pizza</a>
+                <a class="dropdown-item" href="83">Seafood</a>
+                <a class="dropdown-item" href="177">Sushi</a>
+                <a class="dropdown-item" href="308">Vegetarian</a>
+              </div>
+            </div>
+          </nav>
+          <hr>
+          <div class="card-body" id="food-section">
+          </div>
         </div>
       </div>
     </div>
+
+  </div>
   </div>
 
-  <footer>Thanks for staying safe during covid!</footer>
+  <!--SPACEHOLDER FOR EASIER SCROLLING-->
+  <div id="space-holder"></div>
+  <div class="footer">
+    <p>Thanks for staying safe during covid!</p>
+  </div>
 
-  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-  <script src="/assets/script.js"></script>
+  <!--JQUERY AND SCRIPT LINKS-->
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+    integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous">
+    </script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+    </script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+    integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
+    </script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="assets/script.js"></script>
+
+
 </body>
 
 </html>
