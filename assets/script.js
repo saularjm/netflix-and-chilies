@@ -211,10 +211,7 @@
         //var cuisineCode = 25;
 
         // API call URL built with given cuisine code
-        
-        
-        
-        
+
         //do a drop down menu of the food
         //get all cuisine codes and put in drop down menu - only show the names (grab the names)
         //click event for drop down menu
