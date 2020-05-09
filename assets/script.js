@@ -55,8 +55,9 @@
                 var link = $("<a>");
 
                 link.attr("href", locations[i].url);
+                link.attr("target", "_blank");
                 link.text("Click here to stream!");
-                
+
                 linkDiv.text("Link: ");
                 linkDiv.append(link);
                 streamDiv.append(linkDiv);
