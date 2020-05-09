@@ -52,7 +52,13 @@
 
                 // Create div for link to streaming service and append to streamDiv
                 var linkDiv = $("<div>");
-                linkDiv.html("Link: " + locations[i].url);
+                var link = $("<a>");
+
+                link.attr("href", locations[i].url);
+                link.text("Click here to stream!");
+                
+                linkDiv.text("Link: ");
+                linkDiv.append(link);
                 streamDiv.append(linkDiv);
                 streamDiv.append($("<br>"));
 
