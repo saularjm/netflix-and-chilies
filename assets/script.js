@@ -63,22 +63,24 @@
             a. each result gets a set of three (for now) divs + append to element
         */
 
-        /*
-          click event for dropdown menu so it toggles the options:
+        
+          //click event for dropdown menu so it toggles the options:
 
-          $().on("click", function(){
+          $('.dropdown').on("click", function(){
 
             $(".dropdown-toggle").dropdown("toggle");
           });
 
-          if user clicks outside of dropdown it closes:
+          //if user clicks outside of dropdown it closes:
 
           $(document).on("click", function(){
-              $(.dropdown-toggle").dropdown("toggle");
+              $(".dropdown-toggle").dropdown("toggle");
           })
 
-          if use clicks on a selection
+          //if use clicks on a selection
 
+          //for loop to loop through an array that has the 16 numbers? 
+          //first check if this onclick works and then see if it'll when i list the different ids 
           $("#1").on("click", function(e){
               e.preventDefault();
 
@@ -88,7 +90,7 @@
 
             /*URL includes city id for Sacramento, entity type narrows down what type of location we're looking for restaurants in, category specifies what kind of service
         we're looking for - category 1 refers to delivery. Count specifies how many results to show on webpage. Cuisines is refrenced by a zomato specific food code*/
-            /*
+            
             var queryURL = "https://developers.zomato.com/api/v2.1/search?entity_id=499&entity_type=city&category=1&sort=rating&count=10&cuisines=" + integerId;
 
             $.ajax({
@@ -124,7 +126,7 @@
 
           
 
-        */
+        
 
 
         // Zomato API
