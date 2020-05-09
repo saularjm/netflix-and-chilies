@@ -162,12 +162,12 @@
             // var for array of restaurants returned by search
             var restaurant = response.restaurants;
 
-            // Loop through and print restaurant info
+            // Loop through and print restaurant info commented out for now but it works
             for (var i = 0; i < 10; i++) {
                 //jquery .text or .html these results on webpage
-                console.log("Restaurant name: " + restaurant[i].restaurant.name);
-                console.log("Restaurant menu: " + restaurant[i].restaurant.menu_url);
-                console.log("Restaurant phone number: " + restaurant[i].restaurant.phone_numbers);
+                //console.log("Restaurant name: " + restaurant[i].restaurant.name);
+               // console.log("Restaurant menu: " + restaurant[i].restaurant.menu_url);
+                //console.log("Restaurant phone number: " + restaurant[i].restaurant.phone_numbers);
             }
 
         })

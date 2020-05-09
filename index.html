@@ -2,17 +2,17 @@
 <html lang="en">
 
 <head>
-  
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    
-    
-    <link rel="stylesheet" href="assets/style.css">
-    <title>Netflix and Chillies</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+  <!--Bootstrap Link-->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+  <!--CSS Link-->
+  <link rel="stylesheet" href="assets/style.css">
+
+  <title>Netflix and Chillies</title>
 </head>
 
 <body>
@@ -28,48 +28,54 @@
 
   <div class="container" id="main-content">
     <div class="row">
+
       <!--DIV column 1 MOVIES-->
       <div class="col">
         <div class="card" style="width: 100%">
           <div class="card-header">
             <h2>Movies</h2>
           </div>
-          <input id="movie-search" placeholder="Enter movies here"></input>
-          <button type="button" class="btn btn-light" id="searchButton">Light</button>
+          <nav class="navbar navbar-light bg-light">
+            <form class="form-inine">
+              <input class="form-control" type="search" id="movie-search" placeholder="Enter movie title here">
+              <button type="button" class="btn btn-light" id="searchButton">Search</button>
+            </form>
+          </nav>
+          <hr>
           <div class="card-body" id="movie-section">
           </div>
-        
         </div>
       </div>
 
-       <!--DIV column 2 FOOD-->
-       <div class="col" id="food-section">
+      <!--DIV column 2 FOOD-->
+      <div class="col" id="food-section">
         <div class="card" style="width: 100%">
           <div class="card-header">
             <h2>Food</h2>
           </div>
-          <ul class="list-group list-group-flush">
-            <li class="dropdown">
-              <a class="dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Dropdown
-              </a>
-              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <nav class="navbar navbar-light bg-light">
+            <div class="dropdown" style="height:76px;">
+              <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
+                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Dropdown button
+              </button>
+              <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                 <a class="dropdown-item" href="#">Action</a>
                 <a class="dropdown-item" href="#">Another action</a>
-                <div class="dropdown-divider"></div>
                 <a class="dropdown-item" href="#">Something else here</a>
               </div>
-            </li>
-            <li class="list-group-item">Dapibus ac facilisis in</li>
-            <li class="list-group-item">Vestibulum at eros</li>
-          </ul>
+            </div>
+          </nav>
+          <hr>
+          <div class="card-body" id="food-section">
+          </div>
         </div>
       </div>
-      </div>
-
     </div>
+
   </div>
-        
+  </div>
+
   <!--SPACEHOLDER FOR EASIER SCROLLING-->
   <div id="space-holder"></div>
   <div class="footer">
@@ -78,22 +84,21 @@
 
   <!--JQUERY AND SCRIPT LINKS-->
 
-<<<<<<< HEAD
- <!-- OPTIONAL JAVASCRIPT -->
+  <!-- OPTIONAL JAVASCRIPT -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
-        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous">
-        </script>
+      integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous">
+      </script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
-        </script>
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+      </script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
-        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
-        </script>
-=======
->>>>>>> 81d278652ec27eb62b2ad7902ebc6b5723de3650
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <script src="assets/script.js"></script>
+      integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
+      </script>
+    =======
+    >>>>>>> 81d278652ec27eb62b2ad7902ebc6b5723de3650
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="assets/script.js"></script>
 
 </body>
 
