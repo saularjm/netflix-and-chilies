@@ -1,55 +1,103 @@
         // Utelly API - best for determining what streaming service offers a given title
-        // Title to search for:
-        var title = "space jam";
 
-        // Setting up API parameters:
-        var settings = {
-            url: "https://utelly-tv-shows-and-movies-availability-v1.p.rapidapi.com/lookup?term=" + title + "&country=us",
-            method: "GET",
-            headers: {
-                "x-rapidapi-host": "utelly-tv-shows-and-movies-availability-v1.p.rapidapi.com",
-                "x-rapidapi-key": "d30cc4b8b9msh215308fd232e003p1db4bcjsn6b60f025c407"
+        // Function to build Utelly query URL:
+        function buildUtellyURL() {
+            var title = $("#movie-search").val().trim();
+
+            // Setting up API parameters:
+            var settings = {
+                    url: "https://utelly-tv-shows-and-movies-availability-v1.p.rapidapi.com/lookup?term=" + title + "&country=us",
+                    method: "GET",
+                    headers: {
+                        "x-rapidapi-host": "utelly-tv-shows-and-movies-availability-v1.p.rapidapi.com",
+                        "x-rapidapi-key": "d30cc4b8b9msh215308fd232e003p1db4bcjsn6b60f025c407"
+                    }
             }
+
+            return settings;
         }
 
-        // OMDb query url
-        var queryURL = "https://www.omdbapi.com/?t=" + title + "&apikey=724592e7";
+        // Function to update page with movie data
+        function updatePage(movieData) {
 
-        // Perform AJAX call for utelly:
-        $.ajax(settings).then(function (response) {
-            //console.log(response);
-            if (response.results.length === 0) {
-                console.log("No movie for you!");
+            // Error handler if movie isn't available for streaming
+            if (movieData.results.length === 0) {
+                $("movie-section").html("No movie for you!");
             }
             else {
             // Var for array of available locations to stream:
-            var locations = response.results[0].locations;
+            var locations = movieData.results[0].locations;
 
-            // Loop through different streaming services available and print:
+            // Var for movie title
+            var movieTitle = movieData.results[0].name;
+
+            // Create header with title and append to page
+            var titleHeader = $("<h2>");
+            titleHeader.html(movieTitle);
+            $("movie-section").append(titleHeader);
+            $("movie-section").append($("<br>"));
+
+
+            // Loop through different streaming services available and display name and link:
             for (var i=0;i<=locations.length-1;i++) {
-                console.log("Available on: " + locations[i].display_name);
-                console.log("Link: " + locations[i].url);
+
+                // Create div for response info
+                var streamDiv = $("<div>");
+
+                // Create div for name of streaming service and append to streamDiv
+                var serviceDiv = $("<div>");
+                serviceDiv.html("Available on: " + locations[i].display_name);
+                streamDiv.append(serviceDiv);
+                streamDiv.append($("<br>"));
+
+                // Create div for link to streaming service and append to streamDiv
+                var linkDiv = $("<div>");
+                linkDiv.html("Link: " + locations[i].url);
+                streamDiv.append(linkDiv);
+                streamDiv.append($("<br>"));
+
+                // Append streamDiv to page
+                $("movie-section").append(streamDiv);
             }
+
+            // Create OMDb query using movie title and call that API
+            var omdbQuery = "https://www.omdbapi.com/?t=" + movieTitle + "&apikey=724592e7";
+            $.ajax({
+                url: omdbQuery,
+                method: "GET"
+              }).then(function(response) {
+
+                // Create div for plot and append to page
+                var plotDiv = $("<div>");
+                plotDiv.html("Plot summary: " + response.Plot);
+                $("movie-section").append(plotDiv);
+
+                // Create image for poster and append to page
+                var poster = $("<img>");
+                poster.attr("src", response.Poster);
+                $("movie-section").append(poster);
+
+                // Create div for runtime and append to page
+                var timeDiv = $("<div>");
+                timeDiv.html("Runtime: " + response.Runtime);
+                $("movie-section").append(timeDiv);
+              });
+            }  
         }
-        });
 
-        // AJAX call for OMDb
-        $.ajax({
-            url: queryURL,
-            method: "GET"
-          }).then(function(response) {
-              console.log(response.Title);
-              console.log(response.Plot);
+        // Click handler for search button
+        $("searchButton").on("click", function(event) {
+            event.preventDefault();
 
-              var poster = $("<img>");
-              poster.attr("src", response.Poster);
+            // Empty movie div to start
+            $("movie-section").empty();
 
-              console.log(response.Poster);
-              console.log(response.Runtime);
-          })
+            // Build query URL
+            var UtellyQuery = buildUtellyURL();
 
-
-
+            // Call API with page update method
+            $.ajax(UtellyQuery).then(updatePage);
+        })
 
         
         //////////////////////////////////////////////////////
