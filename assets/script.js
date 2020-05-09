@@ -133,19 +133,22 @@
 
           //if use clicks on a selection
 
+          var integerId;
           //for loop to loop through an array that has the 16 numbers? 
           //first check if this onclick works and then see if it'll when i list the different ids 
           $("#1").on("click", function(e){
               e.preventDefault();
 
+              $("#food-section").empty();
+
               var integerId = $(this).attr("id");
-              console.log(intergerId);//want id number as a number but string works too
+              console.log(integerId);//want id number as a number but string works too
 
 
             /*URL includes city id for Sacramento, entity type narrows down what type of location we're looking for restaurants in, category specifies what kind of service
         we're looking for - category 1 refers to delivery. Count specifies how many results to show on webpage. Cuisines is refrenced by a zomato specific food code*/
             
-            var queryURL = "https://developers.zomato.com/api/v2.1/search?entity_id=499&entity_type=city&category=1&sort=rating&count=10&cuisines=" + integerId;
+            var queryURL = "https://developers.zomato.com/api/v2.1/search?entity_id=499&entity_type=city&category=1&sort=rating&count=4&cuisines=" + integerId;
 
             $.ajax({
                 url: queryURL, 
@@ -162,7 +165,7 @@
                 // $("#food-section").append(newDivFood);
 
                 // Loop through and print restaurant info
-                for (var i = 0; i < 10; i++) {
+                for (var i = 0; i < 4; i++) {
                     
                     var name = $("<div class='name'></div>").text("Restaurant name: " + restaurant[i].restaurant.name);
                     var menu = $("<div class='menu'></div>").text("Restaurant menu: " + restaurant[i].restaurant.menu_url);
