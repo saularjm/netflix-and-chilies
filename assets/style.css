@@ -80,19 +80,6 @@ body {
   }
 
 
-#movie-section{
-  border: 3px rgb(56, 142, 163) solid;
-  margin-right: 15px;
-  border-radius: 10px;
-  padding: 0;
-}
-
-#food-section{
-  border: 3px rgb(158, 100, 155) solid;
-  border-radius: 10px;
-  padding: 0;
-}
-
 .dropbtn {
   background-color: #3498DB;
   color: white;
