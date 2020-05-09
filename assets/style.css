@@ -1,6 +1,14 @@
-body {
-    background-color: rgb(238, 108, 56);
+*{
+  box-sizing: border-box;
 }
+body {
+    background-color: aliceblue;
+}
+
+#jumbo{
+  background-color: aquamarine;
+}
+
 .header{
     height: 40px;
     position: center;
@@ -8,10 +16,17 @@ body {
     font-size: 35px;
     color: black;
     margin-bottom: 6px;
-
-
 }
 
+#main-content{
+  width: 100%;
+  margin: auto;
+}
+
+
+.col{
+  background-color: antiquewhite;
+}
 
   .column {
     margin:20px;
@@ -70,12 +85,27 @@ body {
   }
 
 
+#movie-section{
+  border: 3px rgb(56, 142, 163) solid;
+  margin-right: 15px;
+  border-radius: 10px;
+}
 
-.footer{
-    height:22px;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 16px;
-    color: black;
-    position: center;
-    margin-top: 10;
+#food-section{
+  border: 3px rgb(158, 100, 155) solid;
+  border-radius: 10px;
+}
+
+#space-holder{
+  height:200px;
+}
+.footer {
+  padding-top: 15px;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: rgb(56, 142, 163);
+  color: white;
+  text-align: center;
 }

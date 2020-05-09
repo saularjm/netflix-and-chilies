@@ -2,53 +2,53 @@
 <html lang="en">
 
 <head>
-  <<<<<<< HEAD food-script <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    =======
-
+  
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    >>>>>>> 63b154b7c8a9d287ea081100fe8fcfa42a802d81
+    
 
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="assets/style.css">
+    <title>Netflix and Chillies</title>
 
-    <<<<<<< HEAD <title>Document</title>
-      <meta charset="UTF-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-      <title>Document</title>
-      master
-      =======
-      <title>Document</title>
-
-      >>>>>>> 63b154b7c8a9d287ea081100fe8fcfa42a802d81
 </head>
 
-
 <body>
-  food-script
-  <h1>Hello</h1>
-
-
-
-
-
-
-
-
-  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-  <script src="/assets/script.js"></script>
 
   <header>
-    <div class="jumbotron jumbotron-fluid" style="background-color: aquamarine;">
+    <div class="jumbotron jumbotron-fluid" id="jumbo">
       <div class="container">
         <h1 class="display-4">NETFLIX AND CHILLIES</h1>
         <p class="lead">Find your food and movies here!</p>
       </div>
     </div>
   </header>
+
+  <div class="container" id="main-content">
+    <div class="row">
+      <!--DIV column 1 MOVIES-->
+      <div class="col" id="movie-section">
+        <h2>MOVIES</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+          ut labore et dolore
+          magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+          consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+          pariatur.
+          Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        </p>
+      </div>
+
+       <!--DIV column 2 FOOD-->
+       <div class="col" id="food-section">
+        <h2>FOOD</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+          ut labore et dolore
+          magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+          consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+          pariatur.
+          Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        </p>
+      </div>
 
   <div class="row" style="margin:20px;">
     <div class="column" style="position:left; background-color:rgb(56, 142, 163);">
@@ -70,11 +70,17 @@
         <div class="dropdown-menu">
         </div>
       </div>
+
     </div>
   </div>
+        
+  <!--SPACEHOLDER FOR EASIER SCROLLING-->
+  <div id="space-holder"></div>
+  <div class="footer">
+    <p>Thanks for staying safe during covid!</p>
+  </div>
 
-  <footer>Thanks for staying safe during covid!</footer>
-
+  <!--JQUERY AND SCRIPT LINKS-->
   <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
   <script src="/assets/script.js"></script>
 </body>
