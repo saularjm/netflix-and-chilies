@@ -113,11 +113,11 @@
         
           //click event for dropdown menu so it toggles the options:
 
-          $('.dropdown').on("change", function(e){
-              e.preventDefault();
-              
-            $(".dropdown-toggle").toggle();
-        });
+        //   $('.dropdown').on("change", function(e){
+        //       e.preventDefault();
+
+        //     $(".dropdown-toggle").toggle();
+        // });
 
           //if user clicks outside of dropdown it closes:
 
