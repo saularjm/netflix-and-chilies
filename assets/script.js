@@ -22,7 +22,7 @@
 
             // Error handler if movie isn't available for streaming
             if (movieData.results.length === 0) {
-                $("movie-section").html("No movie for you!");
+                $("#movie-section").html("No movie for you!");
             }
             else {
             // Var for array of available locations to stream:
@@ -34,8 +34,8 @@
             // Create header with title and append to page
             var titleHeader = $("<h2>");
             titleHeader.html(movieTitle);
-            $("movie-section").append(titleHeader);
-            $("movie-section").append($("<br>"));
+            $("#movie-section").append(titleHeader);
+            $("#movie-section").append($("<br>"));
 
 
             // Loop through different streaming services available and display name and link:
@@ -57,7 +57,7 @@
                 streamDiv.append($("<br>"));
 
                 // Append streamDiv to page
-                $("movie-section").append(streamDiv);
+                $("#movie-section").append(streamDiv);
             }
 
             // Create OMDb query using movie title and call that API
@@ -70,27 +70,27 @@
                 // Create div for plot and append to page
                 var plotDiv = $("<div>");
                 plotDiv.html("Plot summary: " + response.Plot);
-                $("movie-section").append(plotDiv);
+                $("#movie-section").append(plotDiv);
 
                 // Create image for poster and append to page
                 var poster = $("<img>");
                 poster.attr("src", response.Poster);
-                $("movie-section").append(poster);
+                $("#movie-section").append(poster);
 
                 // Create div for runtime and append to page
                 var timeDiv = $("<div>");
                 timeDiv.html("Runtime: " + response.Runtime);
-                $("movie-section").append(timeDiv);
+                $("#movie-section").append(timeDiv);
               });
             }  
         }
 
         // Click handler for search button
-        $("searchButton").on("click", function(event) {
+        $("#searchButton").on("click", function(event) {
             event.preventDefault();
 
             // Empty movie div to start
-            $("movie-section").empty();
+            $("#movie-section").empty();
 
             // Build query URL
             var UtellyQuery = buildUtellyURL();
