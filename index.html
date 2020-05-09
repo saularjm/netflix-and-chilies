@@ -5,9 +5,12 @@
   
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   
+   
     
-
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    
+    
     <link rel="stylesheet" href="assets/style.css">
     <title>Netflix and Chillies</title>
 
@@ -28,47 +31,47 @@
     <div class="row">
       <!--DIV column 1 MOVIES-->
       <div class="col" id="movie-section">
-        <h2>MOVIES</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
-          ut labore et dolore
-          magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-          consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-          pariatur.
-          Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-        </p>
+        <div class="card" style="width: 100%">
+          <div class="card-header">
+            <h2>Movies</h2>
+          </div>
+          
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item"><div class="search-box">
+              <input type="text" name="name" class="search-txt" placeholder="Type to search" id="movie-search"/>
+              <a class="search-btn" href="#" id="searchButton">
+                <i class="fa fa-search" aria-hidden="true"></i>
+              </a>
+            </div></li>
+            <li class="list-group-item">Dapibus ac facilisis in</li>
+            <li class="list-group-item">Vestibulum at eros</li>
+          </ul>
+        </div>
       </div>
 
        <!--DIV column 2 FOOD-->
        <div class="col" id="food-section">
-        <h2>FOOD</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
-          ut labore et dolore
-          magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-          consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-          pariatur.
-          Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-        </p>
-      </div>
+        <div class="card" style="width: 100%">
+          <div class="card-header">
+            <h2>Food</h2>
+          </div>
 
-  <div class="row" style="margin:20px;">
-    <div class="column" style="position:left; background-color:rgb(56, 142, 163);">
-      <h2>MOVIES</h2>
-      <div class="search-box">
-        <input type="text" name="name" class="search-txt" placeholder="Type to search" />
-        <a class="search-btn" href="#">
-          <i class="fa fa-search" aria-hidden="true"></i>
-        </a>
-      </div>
-    </div>
-    <div class="column" style="position:right; background-color:rgb(158, 100, 155);">
-      <h2>FOOD</h2>
-      <div class="btn-group">
-        <button class="btn btn-secondary btn-lg dropdown-toggle" type="button" data-toggle="dropdown"
-          aria-haspopup="true" aria-expanded="false">
-          Food Options
-        </button>
-        <div class="dropdown-menu">
+          <div class="dropdown">
+            <button class="dropbtn">Dropdown</button>
+            <div id="myDropdown" class="dropdown-content">
+              <a href="#">Link 1</a>
+              <a href="#">Link 2</a>
+              <a href="#">Link 3</a>
+            </div>
+          </div>
+          </div>
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item">Cras justo odio</li>
+            <li class="list-group-item">Dapibus ac facilisis in</li>
+            <li class="list-group-item">Vestibulum at eros</li>
+          </ul>
         </div>
+      </div>
       </div>
 
     </div>
@@ -81,8 +84,12 @@
   </div>
 
   <!--JQUERY AND SCRIPT LINKS-->
+  
+
+
+
   <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-  <script src="/assets/script.js"></script>
+  <script src="assets/script.js"></script>
 </body>
 
 </html>
