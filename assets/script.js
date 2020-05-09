@@ -1,10 +1,5 @@
         // Utelly API - best for determining what streaming service offers a given title
 
-        // Title to search for:
-       
-        var title = "space jam";
-
-
         // Function to build Utelly query URL:
         function buildUtellyURL() {
             var title = $("#movie-search").val().trim();
