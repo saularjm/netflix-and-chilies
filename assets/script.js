@@ -2,7 +2,7 @@
 
         // Function to build Utelly query URL:
         function buildUtellyURL() {
-            //var title = $(PUT SEARCH INPUT HERE).val().trim();
+            var title = $("#movie-search").val().trim();
 
             // Setting up API parameters:
             var settings = {
