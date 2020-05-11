@@ -29,7 +29,7 @@
             var locations = movieData.results[0].locations;
 
             // Var for movie title
-            var movieTitle = movieData.results[0].name.toUpperCase();
+            var movieTitle = $("#movie-search").val().trim().toUpperCase();
 
             // Create header with title and append to page
             var titleHeader = $("<h2 id='movie-title'>");
@@ -68,6 +68,7 @@
 
             // Create OMDb query using movie title and call that API
             var omdbQuery = "https://www.omdbapi.com/?t=" + movieTitle + "&apikey=724592e7";
+
             $.ajax({
                 url: omdbQuery,
                 method: "GET"
