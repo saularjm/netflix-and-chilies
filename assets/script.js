@@ -136,7 +136,8 @@
           var integerId;
           //for loop to loop through an array that has the 16 numbers? 
           //first check if this onclick works and then see if it'll when i list the different ids 
-          $("#1").on("click", function(e){
+
+          $("#1 #3").on("click", function(e){
               e.preventDefault();
 
               $("#food-section").empty();
@@ -144,11 +145,19 @@
               var integerId = $(this).attr("id");
               console.log(integerId);//want id number as a number but string works too
 
+              renderFoodDivs(integerId);
 
+          });
+
+          
+          function renderFoodDivs(foodId){
+
+
+                
             /*URL includes city id for Sacramento, entity type narrows down what type of location we're looking for restaurants in, category specifies what kind of service
-        we're looking for - category 1 refers to delivery. Count specifies how many results to show on webpage. Cuisines is refrenced by a zomato specific food code*/
+            we're looking for - category 1 refers to delivery. Count specifies how many results to show on webpage. Cuisines is refrenced by a zomato specific food code*/
             
-            var queryURL = "https://developers.zomato.com/api/v2.1/search?entity_id=499&entity_type=city&category=1&sort=rating&count=4&cuisines=" + integerId;
+            var queryURL = `https://developers.zomato.com/api/v2.1/search?entity_id=499&entity_type=city&category=1&sort=rating&count=4&cuisines=${foodId}`;
 
             $.ajax({
                 url: queryURL, 
@@ -157,31 +166,57 @@
             }).then(function (response) {
                 console.log(response);
 
-                // var for array of restaurants returned by search
+                /*storing response from ajax call in a variable, to be referred to in the for loop*/
                 var restaurant = response.restaurants;
-                
-                // var newDivFood = $("<div id='food-nest'></div>")
 
-                // $("#food-section").append(newDivFood);
+                var foodSection = $("#food-section");
+
+                var br;
+
+                var hr;
 
                 // Loop through and print restaurant info
-                for (var i = 0; i < 4; i++) {
+                for (var i = 0; i < restaurant.length; i++) {
+
                     
-                    var name = $("<div class='name'></div>").text("Restaurant name: " + restaurant[i].restaurant.name);
-                    var menu = $("<div class='menu'></div>").text("Restaurant menu: " + restaurant[i].restaurant.menu_url);
-                    var number = $("<div class='number'></div>").text("Restaurant phone number: " + restaurant[i].restaurant.phone_numbers);
+                    var name = $("<div>").addClass("rest-name").text("Restaurant name: " + restaurant[i].restaurant.name);
+                    foodSection.append(name);
 
-                    $("#food-section").append(name, menu, number);
+                    br = $("<br>")
+                    foodSection.append(br);
 
-                
+
+                    var emptyDiv = $("<div>").addClass("div");
+                    foodSection.append(emptyDiv);
+
+                    var linkMenu = $("<a>").addClass("link-menu").attr(
+                        {
+                        "href": restaurant[i].restaurant.menu_url,
+                        "target": "_blank"
+                        }
+                    ).text("Click Here for the Menu!");
+
+                    emptyDiv.append(linkMenu);
+
+                    
+                    br = $("<br>")
+                    foodSection.append(br);
+
+
+                    var number = $("<div>").addClass("number").text("Phone number: " + restaurant[i].restaurant.phone_numbers);
+                    foodSection.append(number);
+                    
+                    hr = $("<hr>");
+                    foodSection.append(hr);
+
+                    br = $("<br>")
+                    foodSection.append(br);
+                    
                 
                 }
 
             });
-            
-          });
-
-          
+          }
 
         
 
