@@ -137,13 +137,20 @@
           //for loop to loop through an array that has the 16 numbers? 
           //first check if this onclick works and then see if it'll when i list the different ids 
 
-          $("#1 #3").on("click", function(e){
+          $("#dropdownMenuButton ~ .dropdown-menu > a").on("click", function(e){
               e.preventDefault();
+
+                console.log("click");
 
               $("#food-section").empty();
 
-              var integerId = $(this).attr("id");
+
+              integerId = $(this).attr("id");
+              //var parseId = parseInt(integerId);
+
+              //var integerId = $(this).attr("id");
               console.log(integerId);//want id number as a number but string works too
+              //console.log(parseId)
 
               renderFoodDivs(integerId);
 
