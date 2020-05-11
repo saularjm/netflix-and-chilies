@@ -22,17 +22,17 @@
 
             // Error handler if movie isn't available for streaming
             if (movieData.results.length === 0) {
-                $("#movie-section").html("No movie for you!");
+                $("#movie-section").html("Title not found, please enter another movie");
             }
             else {
             // Var for array of available locations to stream:
             var locations = movieData.results[0].locations;
 
             // Var for movie title
-            var movieTitle = movieData.results[0].name;
+            var movieTitle = movieData.results[0].name.toUpperCase();
 
             // Create header with title and append to page
-            var titleHeader = $("<h2>");
+            var titleHeader = $("<h2 id='movie-title'>");
             titleHeader.html(movieTitle);
             $("#movie-section").append(titleHeader);
             $("#movie-section").append($("<br>"));
@@ -42,28 +42,28 @@
             for (var i=0;i<=locations.length-1;i++) {
 
                 // Create div for response info
-                var streamDiv = $("<div>");
+                var streamDiv = $("<div id='all-links'>");
 
                 // Create div for name of streaming service and append to streamDiv
-                var serviceDiv = $("<div>");
-                serviceDiv.html("Available on: " + locations[i].display_name);
+                var serviceDiv = $("<div id='service-name'>");
+                serviceDiv.html("<strong>AVAILABLE ON: </strong>" + locations[i].display_name);
                 streamDiv.append(serviceDiv);
-                streamDiv.append($("<br>"));
 
                 // Create div for link to streaming service and append to streamDiv
-                var linkDiv = $("<div>");
+                var linkDiv = $("<div id='service-link'>");
                 var link = $("<a>");
 
                 link.attr("href", locations[i].url);
+                link.attr("target", "_blank");
                 link.text("Click here to stream!");
-                
+
                 linkDiv.text("Link: ");
                 linkDiv.append(link);
                 streamDiv.append(linkDiv);
-                streamDiv.append($("<br>"));
+                streamDiv.append($("<hr>"));
 
                 // Append streamDiv to page
-                $("#movie-section").append(streamDiv);
+                $("#movie-links").append(streamDiv);
             }
 
             // Create OMDb query using movie title and call that API
@@ -73,19 +73,19 @@
                 method: "GET"
               }).then(function(response) {
 
-                // Create div for plot and append to page
-                var plotDiv = $("<div>");
-                plotDiv.html("Plot summary: " + response.Plot);
-                $("#movie-section").append(plotDiv);
-
                 // Create image for poster and append to page
-                var poster = $("<img>");
+                var poster = $("<img id='moviePic' style='height:200px'>");
                 poster.attr("src", response.Poster);
                 $("#movie-section").append(poster);
 
+                // Create div for plot and append to page
+                var plotDiv = $("<div id='plotDiv'>");
+                plotDiv.html("<strong>Plot summary: </strong>" + response.Plot);
+                $("#movie-section").append(plotDiv);
+
                 // Create div for runtime and append to page
-                var timeDiv = $("<div>");
-                timeDiv.html("Runtime: " + response.Runtime);
+                var timeDiv = $("<div id='runtimeDiv'>");
+                timeDiv.html("<strong>Runtime: </strong>" + response.Runtime);
                 $("#movie-section").append(timeDiv);
               });
             }  

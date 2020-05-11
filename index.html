@@ -22,7 +22,7 @@
     <div class="jumbotron jumbotron-fluid" id="jumbo">
       <div class="container">
         <h1 class="display-4">NETFLIX AND CHILLIES</h1>
-        <p class="lead">Find your food and movies here!</p>
+        <p class="lead">Socially distancing at home?<br>Find great movies and meals-delivered here!</p>
       </div>
     </div>
   </header>
@@ -39,11 +39,13 @@
           <nav class="navbar navbar-light bg-light">
             <form class="form-inline">
               <input class="form-control" type="search" id="movie-search" placeholder="Enter movie title here">
-              <button type="button" class="btn btn-light" id="searchButton">Search</button>
+              <button type="button" class="btn btn-light" id="searchButton" style="margin-top: 5px">Search</button>
             </form>
           </nav>
           <hr>
           <div class="card-body" id="movie-section">
+          </div>
+          <div class="card-body" id="movie-links">
           </div>
         </div>
       </div>
@@ -54,11 +56,12 @@
           <div class="card-header">
             <h2>Food</h2>
           </div>
+
           <nav class="navbar navbar-light bg-light">
-            <div class="dropdown" style="height:76px;">
-              <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
+            <div class="dropdown">
+              <button class="btn btn-dark dropdown-toggle" type="button" id="dropdownMenuButton"
                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Dropdown button
+                Select food genre
               </button>
               <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                 <a class="dropdown-item" id="1">American</a>

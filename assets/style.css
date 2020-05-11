@@ -2,13 +2,21 @@
   box-sizing: border-box;
 }
 body {
-    background-color: aliceblue;
+    background-color: lightgray;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 #jumbo{
-  background-color: aquamarine;
-}
+  background-color: rgb(180, 32, 32);
+  box-shadow: 0px 5px rgba(245, 245, 245, 0.493);
 
+}
+h1{
+  text-shadow: 1px 2px 8px rgba(245, 245, 245, 0.493);
+}
+.lead{
+  color: whitesmoke
+}
 .header{
     height: 40px;
     position: center;
@@ -23,104 +31,47 @@ body {
   margin: auto;
 }
 
-  .column {
-    margin:20px;
-    width: 50%;
-    padding: 10px;
-    height: 300px; 
-  }
-  .search-box {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background: #666666;
-    height: 40px;
-    border-radius: 40px;
-    padding: 10px;
-    display: flex;
-    justify-content: space-between;
-  }
-  .search-box:hover > .search-txt {
-    width: 240px;
-    padding: 0 6px;
-  }
-  .search-box:hover > .search-btn {
-    background: white;
-    color: black;
-  }
-  .search-btn {
-    color: #eeeeee;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    background: #2f3640;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transition: 0.4s;
-    color: white;
-    cursor: pointer;
-    text-decoration: none;
-  }
-  .search-btn > i {
-    font-size: 20px;
-  }
-  .search-txt {
-    border: none;
-    background: none;
-    outline: none;
-    padding: 0;
-    color: white;
-    font-size: 16px;
-    transition: 0.4s;
-    line-height: 40px;
-    width: 0px;
-    font-weight: bold;
-  }
 hr{
   margin:0;
 }
-
-.dropbtn {
-  background-color: #3498DB;
-  color: white;
-   padding: 16px;
-   font-size: 16px;
-  border: none;
-  cursor: pointer;
- }
- /* Dropdown button on hover & focus */
- .dropbtn:hover, .dropbtn:focus {
-  background-color: #2980B9;
- }
- /* The container <div> - needed to position the dropdown content */
- .dropdown {
-  position: relative;
-  display: inline-block;
- }
- /* Dropdown Content (Hidden by Default) */
- .dropdown-content {
-  display: none;
-  position: absolute;
-  background-color: #F1F1F1;
-  min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  z-index: 1;
- }
- /* Links inside the dropdown */
- .dropdown-content a {
-  color: black;
-  padding: 12px 16px;
-  text-decoration: none;
-  display: block;
- }
- /* Change color of dropdown links on hover */
- .dropdown-content a:hover {background-color: #ddd}
- /* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
- .show {display:block;}
- 
-
+.dropdown-menu{
+  margin-bottom: 100px;
+}
+#movie-title{
+  background-color: #FF8800;
+  border-radius: 5px;
+  text-shadow: 1px 2px 8px rgb(245, 245, 245);
+  padding: 10px;
+  margin:0;
+}
+#movie-section{
+  padding-bottom:5px;
+}
+#movie-title{
+  font-weight: bold;
+}
+#movie-links{
+  padding-top: 0;
+}
+#moviePic{
+  float:left;
+  margin-right: 15px;
+}
+.clearfix{
+  overflow:auto;
+}
+#plotDiv {
+  font-size: 12px;
+}
+#runtimeDiv{
+  font-size: 12px;
+}
+#service-name{
+  margin-top: 15px;
+}
+#service-link{
+  margin-bottom: 10px;
+}
 #space-holder{
   height:200px;
 }
@@ -130,7 +81,7 @@ hr{
   left: 0;
   bottom: 0;
   width: 100%;
-  background-color: rgb(56, 142, 163);
+  background-color: #3E4551;
   color: white;
   text-align: center;
 }
