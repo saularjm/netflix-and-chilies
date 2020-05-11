@@ -164,6 +164,8 @@
 
                 // $("#food-section").append(newDivFood);
 
+                var br = $("<br>")
+
                 // Loop through and print restaurant info
                 for (var i = 0; i < 4; i++) {
                     
@@ -171,7 +173,7 @@
                     var menu = $("<div class='menu'></div>").text("Restaurant menu: " + restaurant[i].restaurant.menu_url);
                     var number = $("<div class='number'></div>").text("Restaurant phone number: " + restaurant[i].restaurant.phone_numbers);
 
-                    $("#food-section").append(name, menu, number);
+                    $("#food-section").append(name, br, menu, br, number);
 
                 
                 
