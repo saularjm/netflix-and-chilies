@@ -166,7 +166,7 @@
             /*URL includes city id for Sacramento, entity type narrows down what type of location we're looking for restaurants in, category specifies what kind of service
             we're looking for - category 1 refers to delivery. Count specifies how many results to show on webpage. Cuisines is refrenced by a zomato specific food code*/
             
-            var queryURL = `https://developers.zomato.com/api/v2.1/search?entity_id=499&entity_type=city&category=1&sort=rating&count=4&cuisines=${foodId}`;
+            var queryURL = `https://developers.zomato.com/api/v2.1/search?entity_id=499&entity_type=city&category=1&sort=rating&count=5&cuisines=${foodId}`;
 
             $.ajax({
                 url: queryURL, 
@@ -175,6 +175,7 @@
             }).then(function (response) {
                 console.log(response);
 
+                
                 /*storing response from ajax call in a variable, to be referred to in the for loop*/
                 var restaurant = response.restaurants;
 
@@ -193,6 +194,14 @@
 
                     br = $("<br>")
                     foodSection.append(br);
+
+                    // var image = $("<img>").addClass("link-img").attr(
+                    //     {
+                    //     "src": restaurant[i].restaurant.featured_image,
+                    //     "alt": "Menu Item"
+                    //     });
+
+                    // foodSection.append(image);
 
 
                     var emptyDiv = $("<div>").addClass("div");
