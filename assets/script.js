@@ -97,6 +97,7 @@
 
             // Empty movie div to start
             $("#movie-section").empty();
+            $("#movie-links").empty();
 
             // Build query URL
             var UtellyQuery = buildUtellyURL();
