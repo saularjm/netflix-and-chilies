@@ -72,6 +72,10 @@ hr{
 #service-link{
   margin-bottom: 10px;
 }
+#city-search{
+  margin-bottom: 10px;
+  width: 170px;
+}
 #space-holder{
   height:200px;
 }
