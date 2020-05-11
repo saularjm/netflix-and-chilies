@@ -2,13 +2,21 @@
   box-sizing: border-box;
 }
 body {
-    background-color: aliceblue;
+    background-color: lightgray;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 #jumbo{
-  background-color: aquamarine;
-}
+  background-color: rgb(180, 32, 32);
+  box-shadow: 0px 5px rgba(245, 245, 245, 0.493);
 
+}
+h1{
+  text-shadow: 1px 2px 8px rgba(245, 245, 245, 0.493);
+}
+.lead{
+  color: whitesmoke
+}
 .header{
     height: 40px;
     position: center;
@@ -29,6 +37,41 @@ hr{
 .dropdown-menu{
   margin-bottom: 100px;
 }
+#movie-title{
+  background-color: #FF8800;
+  border-radius: 5px;
+  text-shadow: 1px 2px 8px rgb(245, 245, 245);
+  padding: 10px;
+  margin:0;
+}
+#movie-section{
+  padding-bottom:5px;
+}
+#movie-title{
+  font-weight: bold;
+}
+#movie-links{
+  padding-top: 0;
+}
+#moviePic{
+  float:left;
+  margin-right: 15px;
+}
+.clearfix{
+  overflow:auto;
+}
+#plotDiv {
+  font-size: 12px;
+}
+#runtimeDiv{
+  font-size: 12px;
+}
+#service-name{
+  margin-top: 15px;
+}
+#service-link{
+  margin-bottom: 10px;
+}
 #space-holder{
   height:200px;
 }
@@ -38,7 +81,7 @@ hr{
   left: 0;
   bottom: 0;
   width: 100%;
-  background-color: rgb(56, 142, 163);
+  background-color: #3E4551;
   color: white;
   text-align: center;
 }
