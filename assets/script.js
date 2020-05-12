@@ -110,34 +110,47 @@
         
         //////////////////////////////////////////////////////
 
-        /*
-        1. click event for dropdown menu so it toggles the options
-        2. click event for selection, (and preventdefault) that grabs the id (that has the corresponding zomato food code)
-        and then does an ajax call with the id (that has to be turned into an integer first)
-        3. for every selection an ajax call populates the container div with 10 results
-            a. each result gets a set of three (for now) divs + append to element
-        */
+        $(".dropdown-menu a").on("click", function(){
 
-        
-          //click event for dropdown menu so it toggles the options:
+            $("#dropdownMenuButton").text($(this).text());
 
-        //   $('.dropdown').on("change", function(e){
-        //       e.preventDefault();
+        });
 
-        //     $(".dropdown-toggle").toggle();
-        // });
 
-          //if user clicks outside of dropdown it closes:
+        var cityValue;
 
-        //   $(document).on("click", function(){
-        //       $(".dropdown-toggle").dropdown("toggle");
-        //   })
+        $("#city-search").on("keyup", function(e){
 
-          //if use clicks on a selection
+            var enter = e.which;
+
+            if (enter === 13){
+
+                e.preventDefault();
+
+                console.log("keyup")
+
+                var cityValue = $(this).val();
+
+                //call the function within the if statement
+
+                console.log(cityValue);
+
+            }
+
+        });
+
+
+        ////////do this one
+        function renderingCoords(cityName){
+
+
+            //call renderFoodDivs function here(within the ajax call), pass the lon and lat variables in it
+
+        };
+
 
           var integerId;
-          //for loop to loop through an array that has the 16 numbers? 
-          //first check if this onclick works and then see if it'll when i list the different ids 
+     
 
           $("#dropdownMenuButton ~ .dropdown-menu > a").on("click", function(e){
               e.preventDefault();
@@ -148,17 +161,27 @@
 
 
               integerId = $(this).attr("id");
-              //var parseId = parseInt(integerId);
+              
 
-              //var integerId = $(this).attr("id");
+              
               console.log(integerId);//want id number as a number but string works too
               //console.log(parseId)
 
+
+            /*an if statement where renderFoodDivs will only be called if a city was typed in
+            */
               renderFoodDivs(integerId);
 
           });
 
           
+
+
+          //////keyup listener for future input element for inputing zipcode (to be entered into renderfood divs function)
+
+
+
+          ////add two more parameters in function for lat and lot
           function renderFoodDivs(foodId){
 
 
