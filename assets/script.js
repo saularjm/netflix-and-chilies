@@ -129,11 +129,13 @@
 
                 console.log("keyup")
 
-                var cityValue = $(this).val();
+                cityValue = $(this).val();
 
                 //call the function within the if statement
 
                 console.log(cityValue);
+
+                renderingCoords(cityValue);
 
             }
 
@@ -143,8 +145,36 @@
         ////////do this one
         function renderingCoords(cityName){
 
+            var settings = {
+                "async": true,
+                "crossDomain": true,
+                "url": `https://devru-latitude-longitude-find-v1.p.rapidapi.com/latlon.php?location=${cityName}`,
+                "method": "GET",
+                "headers": {
+                    "x-rapidapi-host": "devru-latitude-longitude-find-v1.p.rapidapi.com",
+                    "x-rapidapi-key": "4fabb19bebmsh9b17211c969e040p165516jsn9f94a2d4bc2a"
+                }
+            }
+            
+            $.ajax(settings).done(function (response) {
+                console.log(response);
 
-            //call renderFoodDivs function here(within the ajax call), pass the lon and lat variables in it
+
+                var longitude = response.results[0].lon
+
+                console.log(longitude);
+
+                var latitude = response.results[0].lat
+
+                console.log(latitude);
+
+
+                //call renderFoodDivs function here(within the ajax call), pass the lon and lat variables in it
+
+                renderFoodDivs(latitude, longitude);
+
+            });
+
 
         };
 
@@ -168,28 +198,47 @@
               //console.log(parseId)
 
 
-            /*an if statement where renderFoodDivs will only be called if a city was typed in
-            */
               renderFoodDivs(integerId);
 
           });
 
           
-
+          var zipcodeValue;
 
           //////keyup listener for future input element for inputing zipcode (to be entered into renderfood divs function)
+          $().on("keyup", function(e){
+
+            var enterKey = e.which;
+
+            if (enterKey === 13){
+
+                e.preventDefault();
+
+                console.log("keyup")
+
+                zipcodeValue = $(this).val();
+
+                //call the function within the if statement
+
+                console.log(zipcodeValue);
+
+                renderFoodDivs(zipcodeValue);
+
+            }
+
+        });
 
 
 
-          ////add two more parameters in function for lat and lot
-          function renderFoodDivs(foodId){
+          ////add two more parameters in function for lat and lot and change zomato url
+          function renderFoodDivs(foodId, lat, lon, zipCode){
 
 
                 
             /*URL includes city id for Sacramento, entity type narrows down what type of location we're looking for restaurants in, category specifies what kind of service
             we're looking for - category 1 refers to delivery. Count specifies how many results to show on webpage. Cuisines is refrenced by a zomato specific food code*/
             
-            var queryURL = `https://developers.zomato.com/api/v2.1/search?entity_id=499&entity_type=city&category=1&sort=rating&count=5&cuisines=${foodId}`;
+            var queryURL = `https://developers.zomato.com/api/v2.1/search?q=${zipCode}&lat=${lat}&lon=${lon}&category=1&sort=rating&count=5&cuisines=${foodId}`;
 
             $.ajax({
                 url: queryURL, 
