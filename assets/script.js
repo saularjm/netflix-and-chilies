@@ -115,7 +115,6 @@ $("#movie-search").keypress(function (event) {
   }
 })
 
-
 ///////////////////////FOOD SEARCH BELOW///////////////////////////////
 
 $(".dropdown-menu a").on("click", function () {
@@ -123,7 +122,6 @@ $(".dropdown-menu a").on("click", function () {
   $("#dropdownMenuButton").text($(this).text());
 
 });
-
 
 var cityValue;
 var cityclicked;
@@ -234,9 +232,7 @@ $("#dropdownMenuButton ~ .dropdown-menu > a").on("click", function (e) {
 function renderFoodDivs(foodId, lat, lon, zipCode) {
   
 //DISPLAY FOOD TYPE 
-  //$(".food-display").empty();
   var foodPicId = "#foodPic-" + integerId;
-  //$(foodPicId).show();
   $(".food-display").children("img").hide();
   $(".food-display").children(foodPicId).show();
 
