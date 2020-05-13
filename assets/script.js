@@ -163,8 +163,8 @@ function renderingCoords(integerId, zipcodeValue, cityName) {
     });
 
 
-};
 
+};
 
 
 var integerId;
@@ -207,11 +207,9 @@ $("#dropdownMenuButton ~ .dropdown-menu > a").on("click", function (e) {
 function renderFoodDivs(foodId, lat, lon, zipCode) {
 
     //DISPLAY FOOD TYPE 
-  var foodPicId = "#foodPic-" + integerId;
-  $(".food-display").children("img").hide();
-  $(".food-display").children(foodPicId).show();
-
-
+    var foodPicId = "#foodPic-" + integerId;
+    $(".food-display").children("img").hide();
+    $(".food-display").children(foodPicId).show();
 
     /*URL includes city id for Sacramento, entity type narrows down what type of location we're looking for restaurants in, category specifies what kind of service
     we're looking for - category 1 refers to delivery. Count specifies how many results to show on webpage. Cuisines is refrenced by a zomato specific food code*/
