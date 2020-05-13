@@ -27,7 +27,7 @@
         </div>
     </header>
 
-    <div class="container" id="main-content">
+    <div class="flex-container" id="main-content">
         <div class="row">
 
             <!--DIV column 1 MOVIES-->
@@ -35,13 +35,15 @@
                 <div class="card" style="width: 100%">
                     <div class="card-header">
                         <h2>Movies</h2>
+                        <input class="form-control" type="search" id="movie-search"
+                            placeholder="Enter movie title here">
                     </div>
                     <nav class="navbar navbar-light bg-light">
                         <form class="form-inline">
-                            <input class="form-control" type="search" id="movie-search"
-                                placeholder="Enter movie title here">
+                            <!-- <input class="form-control" type="search" id="movie-search"
+                                placeholder="Enter movie title here"> -->
                             <button type="button" class="btn btn-light" id="searchButton"
-                                style="margin-top: 5px">Search</button>
+                                style="margin-top: 0px">Search</button>
                         </form>
                     </nav>
                     <hr>
@@ -57,12 +59,23 @@
                 <div class="card" style="width: 100%">
                     <div class="card-header">
                         <h2>Food</h2>
+                        <form>
+                            <div class="form-row">
+                                <div class="col-7">
+                                    <input type="search" class="form-control" placeholder="Your City, State">
+                                </div>
+                                <div class="col">
+                                    <input type="search" class="form-control" placeholder="Your Zipcode">
+                                </div>
+                            </div>
+                        </form>
                     </div>
 
                     <nav class="navbar navbar-light bg-light">
+
                         <div class="dropdown">
-                            <input class="form-control" type="search" id="city-search" placeholder="Your City, State">
-                            <input class="form-control" type="search" id="zip-search" placeholder="Your Zipcode">
+                            <!-- <input class="form-row" type="search" id="city-search" placeholder="Your City, State">
+                            <input class="form-row" type="search" id="zip-search" placeholder="Your Zipcode"> -->
                             <button class="btn btn-dark dropdown-toggle" type="button" id="dropdownMenuButton"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 Select food genre
@@ -86,26 +99,42 @@
                                 <a class="dropdown-item" id="308">Vegetarian</a>
                             </div>
                         </div>
-                        
+
                     </nav>
-                      <div class="food-display">
-                      <img src="./assets/images/american.jpeg"  style="width: 100%; display: none" alt="american-food-pic" id="foodPic-1">
-                      <img src="./assets/images/asian.jpeg"  style="width: 100%; display: none" alt="american-food-pic" id="foodPic-3">
-                      <img src="./assets/images/barbeque.jpeg"  style="width: 100%; display: none" alt="american-food-pic" id="foodPic-193">
-                      <img src="./assets/images/breakfast.jpeg"  style="width: 100%; display: none" alt="american-food-pic" id="foodPic-182">
-                      <img src="./assets/images/burgers.jpeg"  style="width: 100%; display: none" alt="american-food-pic" id="foodPic-168">
-                      <img src="./assets/images/chinese.jpeg"  style="width: 100%; display: none" alt="american-food-pic" id="foodPic-25">
-                      <img src="./assets/images/dessert.jpeg"  style="width: 100%; display: none" alt="american-food-pic" id="foodPic-100">
-                      <img src="./assets/images/fastfood.jpeg"  style="width: 100%; display: none" alt="american-food-pic" id="foodPic-40">
-                      <img src="./assets/images/healthyfood.jpg"  style="width: 100%; display: none" alt="american-food-pic" id="foodPic-143">
-                      <img src="./assets/images/indian.jpg"  style="width: 100%; display: none" alt="american-food-pic" id="foodPic-148">
-                      <img src="./assets/images/italian.jpg"  style="width: 100%; display: none" alt="american-food-pic" id="foodPic-55">
-                      <img src="./assets/images/mexican.jpg"  style="width: 100%; display: none" alt="american-food-pic" id="foodPic-73">
-                      <img src="./assets/images/pizza.jpg"  style="width: 100%; display: none" alt="american-food-pic" id="foodPic-82">
-                      <img src="./assets/images/seafood.jpg"  style="width: 100%; display: none" alt="american-food-pic" id="foodPic-83">
-                      <img src="./assets/images/sushi.jpg"  style="width: 100%; display: none" alt="american-food-pic" id="foodPic-177">
-                      <img src="./assets/images/vegetarian.jpg"  style="width: 100%; display: none" alt="american-food-pic" id="foodPic-308">
-                      </div>
+                    <div class="food-display">
+                        <img src="./assets/images/american.jpeg" style="width: 100%; display: none"
+                            alt="american-food-pic" id="foodPic-1">
+                        <img src="./assets/images/asian.jpeg" style="width: 100%; display: none" alt="american-food-pic"
+                            id="foodPic-3">
+                        <img src="./assets/images/barbeque.jpeg" style="width: 100%; display: none"
+                            alt="american-food-pic" id="foodPic-193">
+                        <img src="./assets/images/breakfast.jpeg" style="width: 100%; display: none"
+                            alt="american-food-pic" id="foodPic-182">
+                        <img src="./assets/images/burgers.jpeg" style="width: 100%; display: none"
+                            alt="american-food-pic" id="foodPic-168">
+                        <img src="./assets/images/chinese.jpeg" style="width: 100%; display: none"
+                            alt="american-food-pic" id="foodPic-25">
+                        <img src="./assets/images/dessert.jpeg" style="width: 100%; display: none"
+                            alt="american-food-pic" id="foodPic-100">
+                        <img src="./assets/images/fastfood.jpeg" style="width: 100%; display: none"
+                            alt="american-food-pic" id="foodPic-40">
+                        <img src="./assets/images/healthyfood.jpg" style="width: 100%; display: none"
+                            alt="american-food-pic" id="foodPic-143">
+                        <img src="./assets/images/indian.jpg" style="width: 100%; display: none" alt="american-food-pic"
+                            id="foodPic-148">
+                        <img src="./assets/images/italian.jpg" style="width: 100%; display: none"
+                            alt="american-food-pic" id="foodPic-55">
+                        <img src="./assets/images/mexican.jpg" style="width: 100%; display: none"
+                            alt="american-food-pic" id="foodPic-73">
+                        <img src="./assets/images/pizza.jpg" style="width: 100%; display: none" alt="american-food-pic"
+                            id="foodPic-82">
+                        <img src="./assets/images/seafood.jpg" style="width: 100%; display: none"
+                            alt="american-food-pic" id="foodPic-83">
+                        <img src="./assets/images/sushi.jpg" style="width: 100%; display: none" alt="american-food-pic"
+                            id="foodPic-177">
+                        <img src="./assets/images/vegetarian.jpg" style="width: 100%; display: none"
+                            alt="american-food-pic" id="foodPic-308">
+                    </div>
                     <hr>
                     <div class="card-body" id="food-section">
                     </div>
