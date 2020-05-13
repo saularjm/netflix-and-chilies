@@ -107,6 +107,14 @@
             $.ajax(UtellyQuery).then(updatePage);
         })
 
+        // Enter button handler for movie search
+        $("#movie-search").keypress(function(event) {
+          if (event.keyCode === 13) {
+            event.preventDefault();
+            $("#searchButton").click();
+          }
+        })
+
         
         //////////////////////////////////////////////////////
 
