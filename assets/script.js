@@ -185,8 +185,8 @@ $("#dropdownMenuButton ~ .dropdown-menu > a").on("click", function (e) {
 //.siblings to catch the text for 
 //or just catch the 
 
-    zipcodeValue = $("#city-search").val();
-    cityValue = $("#zip-search").val();
+    cityValue = $("#city-search").val();
+    zipcodeValue = $("#zip-search").val();
 
     console.log(integerId);//want id number as a number but string works too
     console.log(zipcodeValue);
@@ -236,15 +236,27 @@ function renderFoodDivs(foodId, lat, lon, zipCode) {
 
         var hr;
 
+        
+        if (restaurant === undefined || restaurant.length == 0){
+                    
+            foodSection.html(`Awww! No Restaurants In Your Area Deliver!`);
+        }
+        else {
         // Loop through and print restaurant info
         for (var i = 0; i < restaurant.length; i++) {
 
 
-            var name = $("<div>").addClass("rest-name").text("Restaurant name: " + restaurant[i].restaurant.name);
+            var name = $("<div>").addClass("rest-name").text(restaurant[i].restaurant.name).css({"font-weight": "600", "font-size": "17px"});
             foodSection.append(name);
 
             br = $("<br>")
             foodSection.append(br);
+
+            br = $("<br>")
+            foodSection.append(br);
+
+            var address = $("<div>").addClass("rest-address").text(restaurant[i].restaurant.location.address).css("font-size", "14px");
+            foodSection.append(address);
 
 
             var emptyDiv = $("<div>").addClass("div");
@@ -264,7 +276,7 @@ function renderFoodDivs(foodId, lat, lon, zipCode) {
             foodSection.append(br);
 
 
-            var number = $("<div>").addClass("number").text("Phone number: " + restaurant[i].restaurant.phone_numbers);
+            var number = $("<div>").addClass("number").text(restaurant[i].restaurant.phone_numbers);
             foodSection.append(number);
 
             hr = $("<hr>");
@@ -279,8 +291,10 @@ function renderFoodDivs(foodId, lat, lon, zipCode) {
 
 
         }
+        }
 
     });
+
 
 }
 
