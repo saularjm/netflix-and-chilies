@@ -19,7 +19,6 @@ function buildUtellyURL() {
 
 // Function to update page with movie data
 function updatePage(movieData) {
-
     // Error handler if movie isn't available for streaming
     if (movieData.results.length === 0) {
         $("#movie-section").html("Title not found, please enter another movie");
@@ -96,8 +95,6 @@ function updatePage(movieData) {
 $("#searchButton").on("click", function (event) {
     event.preventDefault();
 
-
-
     // Empty movie div to start
     $("#movie-section").empty();
     $("#movie-links").empty();
@@ -109,6 +106,9 @@ $("#searchButton").on("click", function (event) {
     $.ajax(UtellyQuery).then(updatePage);
 })
 
+// Click handler for search button
+$("#searchButton").on("click", function (event) {
+  event.preventDefault();
 
 // Enter button handler for movie search
 $("#movie-search").keypress(function (event) {
@@ -127,6 +127,20 @@ $(".dropdown-menu a").on("click", function () {
 
 });
 
+var cityValue;
+var cityclicked;
+$("#city-search").on("keyup", function (e) {
+
+  console.log("keyup")
+
+  var enter = e.which;
+
+  if (enter === 13) {
+
+    e.preventDefault();
+
+});
+
 
 var cityValue;
 
@@ -141,6 +155,9 @@ $("#city-search").on("keyup", function (e) {
         e.preventDefault();
 
 
+    cityValue = $(this).val();
+
+    console.log(cityValue);
 
         cityValue = $(this).val();
 
@@ -226,6 +243,8 @@ $("#zip-search").on("keyup", function (e) {
 
 
 
+    zipclicked = true;
+
 });
 
 var integerId;
@@ -247,6 +266,9 @@ $("#dropdownMenuButton ~ .dropdown-menu > a").on("click", function (e) {
     console.log(integerId);//want id number as a number but string works too
 
 
+    /*URL includes city id for Sacramento, entity type narrows down what type of location we're looking for restaurants in, category specifies what kind of service
+    we're looking for - category 1 refers to delivery. Count specifies how many results to show on webpage. Cuisines is refrenced by a zomato specific food code*/
+
 
     if (cityValue && zipcodeValue) {//checks if there's anything saved in cityvalue
 
@@ -254,6 +276,13 @@ $("#dropdownMenuButton ~ .dropdown-menu > a").on("click", function (e) {
     }
 
 
+
+        // var image = $("<img>").addClass("link-img").attr(
+        //     {
+        //     "src": restaurant[i].restaurant.featured_image,
+        //     "alt": "Menu Item"
+        //     });
+        // foodSection.append(image);
 
 });
 
@@ -338,5 +367,6 @@ function renderFoodDivs(foodId, lat, lon, zipCode) {
     });
 
 }
+
 
 
