@@ -117,9 +117,11 @@
         });
 
 
-        var cityValue;
+          var cityValue;
+          var cityclicked;
+          $("#city-search").on("keyup", function(e){
 
-        $("#city-search").on("keyup", function(e){
+            console.log("keyup")
 
             var enter = e.which;
 
@@ -127,27 +129,26 @@
 
                 e.preventDefault();
 
-                console.log("keyup")
+
 
                 cityValue = $(this).val();
 
-                //call the function within the if statement
-
+                
                 console.log(cityValue);
 
                 renderingCoords(cityValue);
 
+
+                cityclicked = true;
+
             }
 
         });
+    
 
-
-        ////////do this one
         function renderingCoords(cityName){
 
             var settings = {
-                "async": true,
-                "crossDomain": true,
                 "url": `https://devru-latitude-longitude-find-v1.p.rapidapi.com/latlon.php?location=${cityName}`,
                 "method": "GET",
                 "headers": {
@@ -156,20 +157,19 @@
                 }
             }
             
-            $.ajax(settings).done(function (response) {
+            $.ajax(settings).then(function (response) {
                 console.log(response);
 
 
-                var longitude = response.results[0].lon
+                var longitude = response.results[0].lon;
 
                 console.log(longitude);
 
-                var latitude = response.results[0].lat
+                var latitude = response.results[0].lat;
 
                 console.log(latitude);
 
 
-                //call renderFoodDivs function here(within the ajax call), pass the lon and lat variables in it
 
                 renderFoodDivs(latitude, longitude);
 
@@ -179,34 +179,16 @@
         };
 
 
-          var integerId;
-     
-
-          $("#dropdownMenuButton ~ .dropdown-menu > a").on("click", function(e){
-              e.preventDefault();
-
-                console.log("click");
-
-              $("#food-section").empty();
-
-
-              integerId = $(this).attr("id");
-              
-
-              
-              console.log(integerId);//want id number as a number but string works too
-              //console.log(parseId)
-
-
-              renderFoodDivs(integerId);
-
-          });
-
           
           var zipcodeValue;
+         
+          var zipclicked;
+
+          
+
 
           //////keyup listener for future input element for inputing zipcode (to be entered into renderfood divs function)
-          $().on("keyup", function(e){
+          $("#zip-search").on("keyup", function(e){
 
             var enterKey = e.which;
 
@@ -214,26 +196,56 @@
 
                 e.preventDefault();
 
+                
+
                 console.log("keyup")
 
                 zipcodeValue = $(this).val();
 
-                //call the function within the if statement
+                
 
                 console.log(zipcodeValue);
+                
 
                 renderFoodDivs(zipcodeValue);
+
+                zipclicked = true;
 
             }
 
         });
 
+        var integerId;
+        var dropdownclicked;
+
+          $("#dropdownMenuButton ~ .dropdown-menu > a").on("click", function(e){
+            e.preventDefault();
+
+            
+
+              console.log("click");
+
+            $("#food-section").empty();
+
+
+            integerId = $(this).attr("id");
+            
+
+            
+            console.log(integerId);//want id number as a number but string works too
+
+
+            renderFoodDivs(integerId);
+
+            dropdownclicked = true;
+
+        });
 
 
           ////add two more parameters in function for lat and lot and change zomato url
           function renderFoodDivs(foodId, lat, lon, zipCode){
 
-
+            if (cityclicked === true && zipclicked === true && dropdownclicked === true){
                 
             /*URL includes city id for Sacramento, entity type narrows down what type of location we're looking for restaurants in, category specifies what kind of service
             we're looking for - category 1 refers to delivery. Count specifies how many results to show on webpage. Cuisines is refrenced by a zomato specific food code*/
@@ -306,55 +318,7 @@
                 }
 
             });
+            }
           }
 
-        
-
-
-        // Zomato API
-        // Sacramento entity_id = 499
-        // entity_type = city
-        // Category code for delivery = 1
-
-        /* Cuisine codes: 16 
-        American = 1, 
-        Asian = 3, 
-        BBQ = 193, 
-        Breakfast = 182, 
-        Burger = 168, 
-        Chinese = 25, 
-        Desserts = 100, 
-        Fast Food = 40, 
-        Healthy Food = 143, 
-        Indian = 148, 
-        Italian = 55, 
-        Mexican = 73, 
-        Pizza = 82, 
-        Seafood = 83, 
-        Sushi = 177, 
-        Vegetarian = 308
-
-        */
-
-        // var selectedFood = {
-        //     American: 1,
-        //     Asian: 3,
-        //     BBQ: 193,
-
-        // };
-
-          
-        // var for type of food, have to search by zomato code
-        //var cuisineCode = 25;
-
-        // API call URL built with given cuisine code
-
-        //do a drop down menu of the food
-        //get all cuisine codes and put in drop down menu - only show the names (grab the names)
-        //click event for drop down menu
-            //clicking on initial drop down
-            //clicking on a selection
-        //clicking on menu opens up a modal
-
-
-        ///as it cycles through response, it creates three new divs for every item and appends it behind the previous result
+      
