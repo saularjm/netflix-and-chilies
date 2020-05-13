@@ -235,7 +235,7 @@
               console.log("click");
 
             $("#food-section").empty();
-
+            //$(".food-display").empty();
 
             integerId = $(this).attr("id");
             console.log(integerId);
@@ -257,8 +257,12 @@
 
           ////add two more parameters in function for lat and lot and change zomato url
           function renderFoodDivs(foodId, lat, lon, zipCode){
+            
+
             var foodPicId = "#foodPic-" + integerId;
             $(foodPicId).toggle();
+           
+
             if (cityclicked === true && zipclicked === true && dropdownclicked === true){
                 
             /*URL includes city id for Sacramento, entity type narrows down what type of location we're looking for restaurants in, category specifies what kind of service
