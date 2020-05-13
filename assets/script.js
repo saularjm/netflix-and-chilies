@@ -129,34 +129,6 @@ $(".dropdown-menu a").on("click", function () {
 
 
 
-
-// $("#city-search").on("keyup", function (e) {
-
-//     console.log("keyup")
-
-//     var enter = e.which;
-
-//     if (enter === 13) {
-
-//         e.preventDefault();
-
-
-
-        
-
-
-//         console.log(cityValue);
-
-
-//         if (zipcodeValue && integerId) {//checks if there's anything saved in zipcodevalue and integerid
-
-//             renderingCoords(integerId, zipcodeValue, cityValue);
-//         }
-
-//     }
-
-// });
-
 var longitude;
 var latitude;
 
@@ -194,39 +166,6 @@ function renderingCoords(integerId, zipcodeValue, cityName) {
 };
 
 
-
-
-
-
-// //////keyup listener for future input element for inputing zipcode (to be entered into renderfood divs function)
-// $("#zip-search").on("keyup", function (e) {
-
-//     var enterKey = e.which;
-
-//     if (enterKey === 13) {
-
-//         e.preventDefault();
-
-
-//         console.log("keyup")
-
-        
-
-
-
-//         console.log(zipcodeValue);
-
-
-//         if (cityValue && integerId) {//checks if there's anything saved in cityvalue and integerid
-
-//             renderingCoords(integerId, zipcodeValue, cityValue);
-//         }
-
-//     }
-
-
-
-// });
 
 var integerId;
 var zipcodeValue;
