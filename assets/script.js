@@ -241,7 +241,7 @@
 
             integerId = $(this).attr("id");
             
-
+            //var photoData = $("img")
             
             console.log(integerId);//want id number as a number but string works too
 
@@ -257,6 +257,8 @@
           function renderFoodDivs(foodId, lat, lon, zipCode){
 
             if (cityclicked === true && zipclicked === true && dropdownclicked === true){
+
+                
                 
             /*URL includes city id for Sacramento, entity type narrows down what type of location we're looking for restaurants in, category specifies what kind of service
             we're looking for - category 1 refers to delivery. Count specifies how many results to show on webpage. Cuisines is refrenced by a zomato specific food code*/
