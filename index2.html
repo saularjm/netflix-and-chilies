@@ -18,11 +18,79 @@
 
 <body>
 
+<<<<<<< HEAD
     <header>
         <div class="jumbotron jumbotron-fluid" id="jumbo">
             <div class="container">
                 <h1 class="display-4">NETFLIX AND CHILLIES</h1>
                 <p class="lead">Socially distancing at home?<br>Find great movies and meals-delivered here!</p>
+=======
+  <header>
+    <div class="jumbotron jumbotron-fluid" id="jumbo">
+      <div class="container">
+        <h1 class="display-4">NETFLIX AND CHILLIES</h1>
+        <p class="lead">Socially distancing at home?<br>Find great movies and meals-delivered here!</p>
+      </div>
+    </div>
+  </header>
+
+  <div class="container" id="main-content">
+    <div class="row">
+
+      <!--DIV column 1 MOVIES-->
+      <div class="col">
+        <div class="card" style="width: 100%">
+          <div class="card-header">
+            <h2>Movies</h2>
+          </div>
+          <nav class="navbar navbar-light bg-light">
+            <form class="form-inline">
+              <input class="form-control" type="search" id="movie-search" placeholder="Enter movie title here">
+              <button type="button" class="btn btn-light" id="searchButton" style="margin-top: 5px">Search</button>
+            </form>
+          </nav>
+          <hr>
+          <div class="card-body" id="movie-section">
+          </div>
+          <div class="card-body" id="movie-links">
+          </div>
+        </div>
+      </div>
+
+      <!--DIV column 2 FOOD-->
+      <div class="col">
+        <div class="card" style="width: 100%">
+          <div class="card-header">
+            <h2>Food</h2>
+          </div>
+
+          <nav class="navbar navbar-light bg-light">
+            <div class="dropdown">
+              <input class="form-control" type="search" id="city-search" placeholder="Your City, State">
+              <input class="form-control" type="search" id="zip-search" placeholder="Your Zipcode">
+              <button class="btn btn-dark dropdown-toggle" type="button" id="dropdownMenuButton"
+                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Select food genre
+              </button>
+              <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <a class="dropdown-item" id="1">American</a>
+                <a class="dropdown-item" id="3">Asian</a>
+                <a class="dropdown-item" id="193">BBQ</a>
+                <a class="dropdown-item" id="182">Breakfast</a>
+                <a class="dropdown-item" id="168">Burger</a>
+                <a class="dropdown-item" id="25">Chinese</a>
+                <a class="dropdown-item" id="100">Desserts</a>
+                <a class="dropdown-item" id="40">Fast Food</a>
+                <a class="dropdown-item" id="143">Healthy Food</a>
+                <a class="dropdown-item" id="148">Indian</a>
+                <a class="dropdown-item" id="55">Italian</a>
+                <a class="dropdown-item" id="73">Mexican</a>
+                <a class="dropdown-item" id="82">Pizza</a>
+                <a class="dropdown-item" id="83">Seafood</a>
+                <a class="dropdown-item" id="177">Sushi</a>
+                <a class="dropdown-item" id="308">Vegetarian</a>
+              </div>
+>>>>>>> 77a8115b204d8cd31a9043f10c014862ef76a93f
             </div>
         </div>
     </header>
