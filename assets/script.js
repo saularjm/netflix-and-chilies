@@ -116,12 +116,12 @@
         })
 
         
-        //////////////////////////////////////////////////////
+        ///////////////////////FOOD SEARCH BELOW///////////////////////////////
 
         $(".dropdown-menu a").on("click", function(){
 
             $("#dropdownMenuButton").text($(this).text());
-
+            
         });
 
 
@@ -228,11 +228,9 @@
 
         var integerId;
         var dropdownclicked;
-
+       
           $("#dropdownMenuButton ~ .dropdown-menu > a").on("click", function(e){
             e.preventDefault();
-
-            
 
               console.log("click");
 
@@ -240,22 +238,27 @@
 
 
             integerId = $(this).attr("id");
+            console.log(integerId);
+            
             
 
             
             console.log(integerId);//want id number as a number but string works too
-
+            
+            
 
             renderFoodDivs(integerId);
-
+            
             dropdownclicked = true;
-
+            
+           
         });
 
 
           ////add two more parameters in function for lat and lot and change zomato url
           function renderFoodDivs(foodId, lat, lon, zipCode){
-
+            var foodPicId = "#foodPic-" + integerId;
+            $(foodPicId).toggle();
             if (cityclicked === true && zipclicked === true && dropdownclicked === true){
                 
             /*URL includes city id for Sacramento, entity type narrows down what type of location we're looking for restaurants in, category specifies what kind of service
@@ -279,7 +282,7 @@
                 var br;
 
                 var hr;
-
+                
                 // Loop through and print restaurant info
                 for (var i = 0; i < restaurant.length; i++) {
 
@@ -327,9 +330,9 @@
                     
                 
                 }
-
+                
             });
             }
           }
 
-      
+            
