@@ -191,8 +191,8 @@ function renderingCoords(integerId, zipcodeValue, cityName) {
     });
 
 
-};
 
+};
 
 
 var zipcodeValue;
