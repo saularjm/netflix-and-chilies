@@ -66,6 +66,9 @@ hr{
 #runtimeDiv{
   font-size: 12px;
 }
+.hide{
+  display: none;
+}
 #service-name{
   margin-top: 15px;
 }
@@ -88,4 +91,10 @@ hr{
   background-color: #3E4551;
   color: white;
   text-align: center;
+}
+
+div.col.card{
+  height: auto;
+  width: 100%;
+
 }

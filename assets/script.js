@@ -96,6 +96,8 @@ function updatePage(movieData) {
 $("#searchButton").on("click", function (event) {
     event.preventDefault();
 
+
+
     // Empty movie div to start
     $("#movie-section").empty();
     $("#movie-links").empty();
@@ -107,6 +109,7 @@ $("#searchButton").on("click", function (event) {
     $.ajax(UtellyQuery).then(updatePage);
 })
 
+
 // Enter button handler for movie search
 $("#movie-search").keypress(function (event) {
     if (event.keyCode === 13) {
@@ -116,7 +119,7 @@ $("#movie-search").keypress(function (event) {
 })
 
 
-//////////////////////////////////////////////////////
+///////////////////////FOOD SEARCH BELOW///////////////////////////////
 
 $(".dropdown-menu a").on("click", function () {
 
@@ -145,7 +148,7 @@ $("#city-search").on("keyup", function (e) {
         console.log(cityValue);
 
 
-        if (zipcodeValue && integerId){//checks if there's anything saved in zipcodevalue and integerid
+        if (zipcodeValue && integerId) {//checks if there's anything saved in zipcodevalue and integerid
 
             renderingCoords(integerId, zipcodeValue, cityValue);
         }
@@ -181,7 +184,7 @@ function renderingCoords(integerId, zipcodeValue, cityName) {
 
         console.log(latitude);
 
-       
+
 
         renderFoodDivs(integerId, latitude, longitude, zipcodeValue);
 
@@ -205,7 +208,6 @@ $("#zip-search").on("keyup", function (e) {
         e.preventDefault();
 
 
-
         console.log("keyup")
 
         zipcodeValue = $(this).val();
@@ -215,13 +217,13 @@ $("#zip-search").on("keyup", function (e) {
         console.log(zipcodeValue);
 
 
-
-        if (cityValue && integerId){//checks if there's anything saved in cityvalue and integerid
+        if (cityValue && integerId) {//checks if there's anything saved in cityvalue and integerid
 
             renderingCoords(integerId, zipcodeValue, cityValue);
         }
 
     }
+
 
 
 });
@@ -233,7 +235,6 @@ $("#dropdownMenuButton ~ .dropdown-menu > a").on("click", function (e) {
     e.preventDefault();
 
 
-
     console.log("click");
 
     $("#food-section").empty();
@@ -241,18 +242,18 @@ $("#dropdownMenuButton ~ .dropdown-menu > a").on("click", function (e) {
 
     integerId = $(this).attr("id");
 
-    
+
 
     console.log(integerId);//want id number as a number but string works too
 
 
 
-    if (cityValue && zipcodeValue){//checks if there's anything saved in cityvalue
+    if (cityValue && zipcodeValue) {//checks if there's anything saved in cityvalue
 
-            renderingCoords(integerId, zipcodeValue, cityValue);
-        }
+        renderingCoords(integerId, zipcodeValue, cityValue);
+    }
 
-    
+
 
 });
 
@@ -260,76 +261,82 @@ $("#dropdownMenuButton ~ .dropdown-menu > a").on("click", function (e) {
 ////add two more parameters in function for lat and lot and change zomato url
 function renderFoodDivs(foodId, lat, lon, zipCode) {
 
-   
+    var foodPicId = "#foodPic-" + integerId;
+    $(foodPicId).toggle();
 
 
 
-        /*URL includes city id for Sacramento, entity type narrows down what type of location we're looking for restaurants in, category specifies what kind of service
-        we're looking for - category 1 refers to delivery. Count specifies how many results to show on webpage. Cuisines is refrenced by a zomato specific food code*/
+    /*URL includes city id for Sacramento, entity type narrows down what type of location we're looking for restaurants in, category specifies what kind of service
+    we're looking for - category 1 refers to delivery. Count specifies how many results to show on webpage. Cuisines is refrenced by a zomato specific food code*/
 
-        var queryURL = `https://developers.zomato.com/api/v2.1/search?q=${zipCode}&lat=${lat}&lon=${lon}&category=1&sort=rating&count=5&cuisines=${foodId}`;
+    var queryURL = `https://developers.zomato.com/api/v2.1/search?q=${zipCode}&lat=${lat}&lon=${lon}&category=1&sort=rating&count=5&cuisines=${foodId}`;
 
-        $.ajax({
-            url: queryURL,
-            method: "GET",
-            headers: { "user-key": "8aeaa8b6fb7879eccc32af42e280f916" }
-        }).then(function (response) {
-            console.log(response);
+    $.ajax({
+        url: queryURL,
+        method: "GET",
+        headers: { "user-key": "8aeaa8b6fb7879eccc32af42e280f916" }
+    }).then(function (response) {
+        console.log(response);
 
-            zipcodeValue = null;
-            cityValue = null;
-            integerId = null; //sets them back to zero, like the emtpy method
+        zipcodeValue = null;
+        cityValue = null;
+        integerId = null; //sets them back to zero, like the emtpy method
 
-            /*storing response from ajax call in a variable, to be referred to in the for loop*/
-            var restaurant = response.restaurants;
+        /*storing response from ajax call in a variable, to be referred to in the for loop*/
+        var restaurant = response.restaurants;
 
-            var foodSection = $("#food-section");
+        var foodSection = $("#food-section");
 
-            var br;
+        var br;
 
-            var hr;
+        var hr;
 
-            // Loop through and print restaurant info
-            for (var i = 0; i < restaurant.length; i++) {
-
-
-                var name = $("<div>").addClass("rest-name").text("Restaurant name: " + restaurant[i].restaurant.name);
-                foodSection.append(name);
-
-                br = $("<br>")
-                foodSection.append(br);
+        // Loop through and print restaurant info
+        for (var i = 0; i < restaurant.length; i++) {
 
 
-                var emptyDiv = $("<div>").addClass("div");
-                foodSection.append(emptyDiv);
+            var name = $("<div>").addClass("rest-name").text("Restaurant name: " + restaurant[i].restaurant.name);
+            foodSection.append(name);
 
-                var linkMenu = $("<a>").addClass("link-menu").attr(
-                    {
-                        "href": restaurant[i].restaurant.menu_url,
-                        "target": "_blank"
-                    }
-                ).text("Click Here for the Menu!");
-
-                emptyDiv.append(linkMenu);
+            br = $("<br>")
+            foodSection.append(br);
 
 
-                br = $("<br>")
-                foodSection.append(br);
+            var emptyDiv = $("<div>").addClass("div");
+            foodSection.append(emptyDiv);
+
+            var linkMenu = $("<a>").addClass("link-menu").attr(
+                {
+                    "href": restaurant[i].restaurant.menu_url,
+                    "target": "_blank"
+                }
+            ).text("Click Here for the Menu!");
+
+            emptyDiv.append(linkMenu);
 
 
-                var number = $("<div>").addClass("number").text("Phone number: " + restaurant[i].restaurant.phone_numbers);
-                foodSection.append(number);
-
-                hr = $("<hr>");
-                foodSection.append(hr);
-
-                br = $("<br>")
-                foodSection.append(br);
+            br = $("<br>")
+            foodSection.append(br);
 
 
-            }
+            var number = $("<div>").addClass("number").text("Phone number: " + restaurant[i].restaurant.phone_numbers);
+            foodSection.append(number);
 
-        });
-    
+            hr = $("<hr>");
+            foodSection.append(hr);
+
+            br = $("<br>")
+            foodSection.append(br);
+
+
+            br = $("<br>")
+            foodSection.append(br);
+
+
+        }
+
+    });
+
 }
+
 
