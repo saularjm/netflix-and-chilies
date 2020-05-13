@@ -249,14 +249,15 @@ function renderFoodDivs(foodId, lat, lon, zipCode) {
             var name = $("<div>").addClass("rest-name").text(restaurant[i].restaurant.name).css({"font-weight": "600", "font-size": "17px"});
             foodSection.append(name);
 
-            br = $("<br>")
-            foodSection.append(br);
 
             br = $("<br>")
             foodSection.append(br);
 
             var address = $("<div>").addClass("rest-address").text(restaurant[i].restaurant.location.address).css("font-size", "14px");
             foodSection.append(address);
+
+            br = $("<br>")
+            foodSection.append(br);
 
 
             var emptyDiv = $("<div>").addClass("div");
