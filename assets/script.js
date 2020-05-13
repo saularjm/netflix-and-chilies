@@ -128,34 +128,6 @@ $(".dropdown-menu a").on("click", function () {
 });
 
 
-var cityValue;
-
-$("#city-search").on("keyup", function (e) {
-
-    console.log("keyup")
-
-    var enter = e.which;
-
-    if (enter === 13) {
-
-        e.preventDefault();
-
-
-
-        cityValue = $(this).val();
-
-
-        console.log(cityValue);
-
-
-        if (zipcodeValue && integerId) {//checks if there's anything saved in zipcodevalue and integerid
-
-            renderingCoords(integerId, zipcodeValue, cityValue);
-        }
-
-    }
-
-});
 
 var longitude;
 var latitude;
@@ -195,41 +167,9 @@ function renderingCoords(integerId, zipcodeValue, cityName) {
 };
 
 
-var zipcodeValue;
-
-
-//////keyup listener for future input element for inputing zipcode (to be entered into renderfood divs function)
-$("#zip-search").on("keyup", function (e) {
-
-    var enterKey = e.which;
-
-    if (enterKey === 13) {
-
-        e.preventDefault();
-
-
-        console.log("keyup")
-
-        zipcodeValue = $(this).val();
-
-
-
-        console.log(zipcodeValue);
-
-
-        if (cityValue && integerId) {//checks if there's anything saved in cityvalue and integerid
-
-            renderingCoords(integerId, zipcodeValue, cityValue);
-        }
-
-    }
-
-
-
-});
-
 var integerId;
-
+var zipcodeValue;
+var cityValue;
 
 $("#dropdownMenuButton ~ .dropdown-menu > a").on("click", function (e) {
     e.preventDefault();
@@ -242,10 +182,15 @@ $("#dropdownMenuButton ~ .dropdown-menu > a").on("click", function (e) {
 
     integerId = $(this).attr("id");
 
+//.siblings to catch the text for 
+//or just catch the 
 
+    zipcodeValue = $("#city-search").val();
+    cityValue = $("#zip-search").val();
 
     console.log(integerId);//want id number as a number but string works too
-
+    console.log(zipcodeValue);
+    console.log(cityValue);
 
 
     if (cityValue && zipcodeValue) {//checks if there's anything saved in cityvalue
