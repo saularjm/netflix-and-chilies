@@ -153,6 +153,8 @@
 
         });
     
+        var longitude;
+        var latitude;
 
         function renderingCoords(cityName){
 
@@ -168,12 +170,13 @@
             $.ajax(settings).then(function (response) {
                 console.log(response);
 
+                
 
-                var longitude = response.results[0].lon;
+                longitude = response.results.lon;
 
                 console.log(longitude);
 
-                var latitude = response.results[0].lat;
+                latitude = response.results.lat;
 
                 console.log(latitude);
 
