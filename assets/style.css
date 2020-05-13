@@ -66,6 +66,9 @@ hr{
 #runtimeDiv{
   font-size: 12px;
 }
+.hide{
+  display: none;
+}
 #service-name{
   margin-top: 15px;
 }
