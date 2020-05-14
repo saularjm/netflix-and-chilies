@@ -1,3 +1,9 @@
+//Slideshow script to animate
+$(document).ready(function(){
+    $('.carousel').carousel({
+      interval: 1000
+    })
+  });    
 // Utelly API - best for determining what streaming service offers a given title
 
 // Function to build Utelly query URL:
