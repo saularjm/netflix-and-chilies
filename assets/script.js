@@ -52,7 +52,7 @@ function updatePage(movieData) {
 
             // Create div for name of streaming service and append to streamDiv
             var serviceDiv = $("<div id='service-name'>");
-            serviceDiv.html("<strong>AVAILABLE ON: </strong>" + locations[i].display_name);
+            serviceDiv.html("<strong>Available on: </strong>" + locations[i].display_name);
             streamDiv.append(serviceDiv);
 
             // Create div for link to streaming service and append to streamDiv

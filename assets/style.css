@@ -96,16 +96,13 @@ hr{
   margin:0;
 }
 #movie-section{
-  padding-bottom: 27px;
+  
   text-align: left;
 }
 #movie-title{
   font-weight: bold;
 }
- #movie-links{
-  padding-top: 0;
-  padding-bottom: 26px;
-}
+
 #service-name{
   margin-top: 15px;
 }
