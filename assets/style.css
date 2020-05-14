@@ -50,9 +50,10 @@ hr{
 #movie-title{
   font-weight: bold;
 }
-/* #movie-links{
+ #movie-links{
   padding-top: 0;
-} */
+  padding-bottom: 26px;
+}
 #moviePic{
   float:left;
   margin-right: 15px;
@@ -117,6 +118,12 @@ hr{
   justify-content: space-between;
   padding: .75rem 1.25rem;
   margin-bottom: 0px;
+}
+
+.dropdown{
+  padding: .75rem 1.25rem;
+  margin-bottom: 0px;
+
 }
 
 .card-header {
