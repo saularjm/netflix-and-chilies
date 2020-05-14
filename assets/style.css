@@ -2,7 +2,7 @@
   box-sizing: border-box;
 }
 body {
-    background-color: lightgray;
+    background-color: rgb(211, 211, 211);
     font-family: Arial, Helvetica, sans-serif;
 }
 
@@ -50,9 +50,10 @@ hr{
 #movie-title{
   font-weight: bold;
 }
-/* #movie-links{
+ #movie-links{
   padding-top: 0;
-} */
+  padding-bottom: 26px;
+}
 #moviePic{
   float:left;
   margin-right: 15px;
@@ -119,6 +120,12 @@ hr{
   margin-bottom: 0px;
 }
 
+.dropdown{
+  padding: .75rem 1.25rem;
+  margin-bottom: 0px;
+
+}
+
 .card-header {
   padding: .75rem 1.25rem;
   margin-bottom: 0;
@@ -127,5 +134,5 @@ hr{
 }
 .food-display{
   margin-bottom: 0px;
-  height: 23px;
+  
 }
