@@ -250,7 +250,7 @@ function renderFoodDivs(foodId, lat, lon, zipCode) {
             for (var i = 0; i < restaurant.length; i++) {
 
 
-                var name = $("<div>").addClass("rest-name").text(restaurant[i].restaurant.name).css({ "font-weight": "600", "font-size": "17px" });
+                var name = $("<div>").addClass("rest-name").text(restaurant[i].restaurant.name);
                 foodSection.append(name);
 
 
@@ -277,8 +277,6 @@ function renderFoodDivs(foodId, lat, lon, zipCode) {
                 hr = $("<hr>");
                 foodSection.append(hr);
 
-                br = $("<br>")
-                foodSection.append(br);
 
 
             }

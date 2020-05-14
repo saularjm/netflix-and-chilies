@@ -95,20 +95,23 @@ hr{
   padding: 10px;
   margin:0;
 }
-
 #movie-section{
   padding-bottom: 27px;
+  text-align: left;
 }
 #movie-title{
   font-weight: bold;
 }
-
-
  #movie-links{
   padding-top: 0;
   padding-bottom: 26px;
 }
-
+#service-name{
+  margin-top: 15px;
+}
+#service-link{
+  margin-bottom: 10px;
+}
 #moviePic{
   float:left;
   margin-right: 15px;
@@ -125,8 +128,11 @@ hr{
 
 /* Food card styling */
 #city-search{
-  margin-bottom: 10px;
   width: 170px;
+}
+.dropdown{
+  padding: 0;
+  margin-bottom: 0px;
 }
 .dropdown-menu{
   margin-bottom: 100px;
@@ -137,10 +143,15 @@ hr{
 .food-display{
   margin-bottom: 0px;
 }
-#service-name{
-  margin-top: 15px;
+.food-section{
+  font-size: 16px;
 }
-#service-link{
+.rest-name{
+  margin-top: 15px;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+.number{
   margin-bottom: 10px;
 }
 
@@ -157,48 +168,5 @@ hr{
   background-color: #3E4551;
   color: white;
   text-align: center;
-
 }
 
-.flex-container {
-  display: flex;
-  flex-wrap: nowrap;
-}
-
-.flex-container > div {
-  width: 100%;
-  margin: 10px;
-  text-align: center;
-  
-}
-
-.navbar {
-  position: relative;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
-  -ms-flex-align: center;
-  align-items: center;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
-  padding: .75rem 1.25rem;
-  margin-bottom: 0px;
-}
-
-.dropdown{
-  padding: .75rem 1.25rem;
-  margin-bottom: 0px;
-
-}
-
-.card-header {
-  padding: .75rem 1.25rem;
-  margin-bottom: 0;
-  background-color: rgba(0,0,0,.03);
-  border-bottom: 1px solid rgba(0,0,0,.125);
-}
-.food-display{
-  margin-bottom: 0px;
-  
-}
