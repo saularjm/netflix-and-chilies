@@ -56,6 +56,8 @@
 
 - The back-end team for this project was made up of Sandra Arredondo and Saular Moaddeli
     - This team was responsible for creating the JS files for this application
+        - Sandra handled coding and APIs for restaurant information
+        - Saular handled coding and APIs for movie information
     - The technologies the employed include:
         - JavaScript
         - JQuery
