@@ -121,6 +121,7 @@ $("#movie-search").keypress(function (event) {
 
 ///////////////////////FOOD SEARCH BELOW///////////////////////////////
 
+
 $(".dropdown-menu a").on("click", function () {
 
     $("#dropdownMenuButton").text($(this).text());
@@ -182,21 +183,18 @@ $("#dropdownMenuButton ~ .dropdown-menu > a").on("click", function (e) {
 
     integerId = $(this).attr("id");
 
-//.siblings to catch the text for 
-//or just catch the 
 
-    zipcodeValue = $("#city-search").val();
-    cityValue = $("#zip-search").val();
+    cityValue = $("#city-search").val();
+    zipcodeValue = $("#zip-search").val();
 
     console.log(integerId);//want id number as a number but string works too
     console.log(zipcodeValue);
     console.log(cityValue);
 
 
-    if (cityValue && zipcodeValue) {//checks if there's anything saved in cityvalue
 
-        renderingCoords(integerId, zipcodeValue, cityValue);
-    }
+    renderingCoords(integerId, zipcodeValue, cityValue);
+
 
 
 
@@ -236,51 +234,52 @@ function renderFoodDivs(foodId, lat, lon, zipCode) {
 
         var hr;
 
-        // Loop through and print restaurant info
-        for (var i = 0; i < restaurant.length; i++) {
+
+        if (restaurant === undefined || restaurant.length == 0) {
+
+            foodSection.html(`Awww! No Restaurants In Your Area Deliver!`);
+        }
+        else {
+            // Loop through and print restaurant info
+            for (var i = 0; i < restaurant.length; i++) {
 
 
-            var name = $("<div>").addClass("rest-name").text("Restaurant name: " + restaurant[i].restaurant.name);
-            foodSection.append(name);
-
-            br = $("<br>")
-            foodSection.append(br);
+                var name = $("<div>").addClass("rest-name").text(restaurant[i].restaurant.name).css({ "font-weight": "600", "font-size": "17px" });
+                foodSection.append(name);
 
 
-            var emptyDiv = $("<div>").addClass("div");
-            foodSection.append(emptyDiv);
-
-            var linkMenu = $("<a>").addClass("link-menu").attr(
-                {
-                    "href": restaurant[i].restaurant.menu_url,
-                    "target": "_blank"
-                }
-            ).text("Click Here for the Menu!");
-
-            emptyDiv.append(linkMenu);
+                var address = $("<div>").addClass("rest-address").text(restaurant[i].restaurant.location.address).css("font-size", "14px");
+                foodSection.append(address);
 
 
-            br = $("<br>")
-            foodSection.append(br);
+                var emptyDiv = $("<div>").addClass("div");
+                foodSection.append(emptyDiv);
+
+                var linkMenu = $("<a>").addClass("link-menu").attr(
+                    {
+                        "href": restaurant[i].restaurant.menu_url,
+                        "target": "_blank"
+                    }
+                ).text("Click Here for the Menu!");
+
+                emptyDiv.append(linkMenu);
 
 
-            var number = $("<div>").addClass("number").text("Phone number: " + restaurant[i].restaurant.phone_numbers);
-            foodSection.append(number);
+                var number = $("<div>").addClass("number").text(restaurant[i].restaurant.phone_numbers);
+                foodSection.append(number);
 
-            hr = $("<hr>");
-            foodSection.append(hr);
+                hr = $("<hr>");
+                foodSection.append(hr);
 
-            br = $("<br>")
-            foodSection.append(br);
-
-
-            br = $("<br>")
-            foodSection.append(br);
+                br = $("<br>")
+                foodSection.append(br);
 
 
+            }
         }
 
     });
+
 
 }
 
