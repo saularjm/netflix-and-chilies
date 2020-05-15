@@ -193,7 +193,7 @@ $("#dropdownMenuButton ~ .dropdown-menu > a").on("click", function (e) {
     /*To prevent the function renderingCoords from being fed the cityValue for cityName variable (for API url), this checks
     to see if values were entered into the input elements for zip code and city/state. Otherwise, the cityValue will be sent to
     renderingCoords and hence to renderFoodDivs function, where Zomato url will still work without the zipcode (that further narrows
-    down the user's location*/
+    down the user's location. An error message will appear if the two input elements are not filled out.*/
     if (integerId && zipcodeValue){
 
     renderingCoords(integerId, zipcodeValue, cityValue);
