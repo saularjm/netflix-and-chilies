@@ -12,7 +12,7 @@
 
 * Methods and Tech
 
-* Launch
+* Check it Out!
 
 ## Overview
 
