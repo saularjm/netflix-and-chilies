@@ -4,11 +4,26 @@
 
 - Contributors: Haley Alton, Vanessa Bautista, Sandra Arredondo, and Saular Moaddeli 
 
+## Table of Contents
+
+* Overview
+
+* Usage
+
+* Methods and Tech
+
+* Launch
+
 ## Overview
 
-- This application includes a landing page, with a title and introduction for the application and a button to enter the main webpage.
+- This application is made of two pages, a landing page and a main page where the user can choose a movie to stream and food to be delivered. The main page includes two different columns, one for movies, and the other for food, based by genre.
 
-- This application displays movie streaming information, including:
+- The landing page includes:
+    - A title
+    - An introduction
+    - A button to enter the main webpage
+
+- The movie column displays movie streaming information, including:
     - Movie title
     - Movie poster
     - Plot summary
@@ -16,8 +31,8 @@
     - Streaming services the movie is available on
         - Including links to the movie on those streaming sites
 
-- This application also displays restaurant information for the user's area, including:
-    - Image of genre of food
+- The food column displays restaurant information for the user's area, including:
+    - An image of food by genre
     - Name of the restaurant
     - Restaurant address
     - Link to the restaurant's menu
@@ -25,22 +40,22 @@
 
 ## Usage
 
-- Upon loading the landing page, the user will be presented with a button to click to enter the main webpage.
+- Upon loading of the landing page, the user will be presented with a button, to click, to enter the main page.
 
 - When the main page is loaded, the user is presented with 2 columns, one for movies and one for food:
     - Movies:
         - This column begins with a text input box to type in a movie title 
         - The search can be executed by clicking a search button or pressing the Enter key
         - Once submitted, the movie column will populate with the appropriate information for the movie title that was searched
-        - If the movie title that was searched is not valid, a notice will be displayed for the user
+        - If the movie title that was searched is not valid, a notice will be displayed for the user: "Title not found, please enter another movie"
 
     - Food:
         - This column begins with 2 text input boxes
-            - The first is for inputting the user's city and state location
-            - The second is for inputting the user's zipcode
-        - There is also a dropdown menu containing different genres of food for the user to choose between
+            - The first is for the user's city and state location
+            - The second is for the user's zipcode
+        - There is also a dropdown menu containing different types of food for the user to choose from
         - Upon filling in the location information and choosing a type of food, the food column will be populated with the pertinent information for food delivery in the user's area
-        - If there is no food delivery option for the given location and style, a notice will be displayed for the user
+        - If there is no food delivery option for the given location and style, a notice will be displayed for the user: "Awww! No Restaurants In Your Area Deliver!"
 
 ## Methods and Tech
 
