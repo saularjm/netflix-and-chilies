@@ -135,7 +135,6 @@ $(".dropdown-menu a").on("click", function () {
 
 });
 
-
 /*The variables holding the latitude and longitude, taken from the City Geo-Location Lookup API, are initialized here*/
 var longitude;
 var latitude;
@@ -156,6 +155,7 @@ function renderingCoords(integerId, zipcodeValue, cityName) {
     }
 
     $.ajax(settings).then(function (response) {
+        console.log(response);
 
     /*longitude and latitude from the response, for the specified city and state*/
         longitude = response.Results[0].lon;
@@ -186,15 +186,23 @@ $("#dropdownMenuButton ~ .dropdown-menu > a").on("click", function (e) {
     /*With every new selection, the dynamically created divs in the function renderFoodDivs is emptied in the card element*/
     $("#food-section").empty();
 
-
     integerId = $(this).attr("id");
-
 
     cityValue = $("#city-search").val();
     zipcodeValue = $("#zip-search").val();
 
+    /*To prevent the function renderingCoords from being fed the cityValue for cityName variable (for API url), this checks
+    to see if values were entered into the input elements for zip code and city/state. Otherwise, the cityValue will be sent to
+    renderingCoords and hence to renderFoodDivs function, where Zomato url will still work without the zipcode (that further narrows
+    down the user's location*/
+    if (integerId && zipcodeValue){
 
     renderingCoords(integerId, zipcodeValue, cityValue);
+
+    }
+    else {
+        $("#food-section").text("Enter your location and zipcode FIRST Please! You'll get your food soon enough!")
+    }
 
 });
 
@@ -219,6 +227,7 @@ function renderFoodDivs(foodId, lat, lon, zipCode) {
         method: "GET",
         headers: { "user-key": "8aeaa8b6fb7879eccc32af42e280f916" }
     }).then(function (response) {
+        console.log(response);
 
         /*This empties the variables so that they be used again if the user changes their location or food selection*/
         zipcodeValue = null;
