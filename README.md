@@ -63,6 +63,7 @@
         - There is also a dropdown menu containing different types of food for the user to choose from
         - Upon filling in the location information and choosing a type of food, the food column will be populated with the pertinent information for food delivery in the user's area
         - If there is no food delivery option for the given location and style, a notice will be displayed for the user: "Awww! No Restaurants In Your Area Deliver!"
+        - If city, state and/or zip code is not entered before selecting a food genre, a message will pop up for the user: "Enter your location and zipcode FIRST Please! You'll get your food soon enough!"
 
 ## Methods and Tech
 
