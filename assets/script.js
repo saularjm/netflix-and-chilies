@@ -3,7 +3,8 @@ $(document).ready(function(){
     $('.carousel').carousel({
       interval: 1000
     })
-  });    
+  });  
+
 // Utelly API - best for determining what streaming service offers a given title
 
 // Function to build Utelly query URL:
@@ -101,8 +102,6 @@ function updatePage(movieData) {
 // Click handler for search button
 $("#searchButton").on("click", function (event) {
     event.preventDefault();
-
-
 
     // Empty movie div to start
     $("#movie-section").empty();

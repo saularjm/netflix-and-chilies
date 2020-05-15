@@ -19,9 +19,16 @@
 - This application is made of two pages, a landing page and a main page where the user can choose a movie to stream and food to be delivered. The main page includes two different columns, one for movies, and the other for food, based by genre.
 
 - The landing page includes:
-    - A title
-    - An introduction
+    - Title
+    - Tagline
     - A button to enter the main webpage
+    - Flexbox design
+    - Photo/text layering
+
+- Main page includes:
+    - Carousel with three images and text layering
+    - 2 cards for content
+    - Sticky footer
 
 - The movie column displays movie streaming information, including:
     - Movie title
@@ -68,6 +75,8 @@
             - Bootstrap JavaScript plugins
         - Typekit fonts
         - Custom CSS styling by Haley and Vanessa
+            - Haley handled initial html, the landing page, Flexbox functionality, some tweaks to main page styling
+            - Vanessa handled additional html, bootstrap formating, connecting files, carousel on main page, opacity on landing page
 
 - The back-end team for this project was made up of Sandra Arredondo and Saular Moaddeli
     - This team was responsible for creating the JS files for this application
@@ -84,5 +93,5 @@
                 - City Geo-Location Lookup - Convert city location to latitude and longitude
 
 ### Check it out!
-- Link to deployed application:  
+- Link to deployed application: https://saularjm.github.io/netflix-and-chilies/
 
